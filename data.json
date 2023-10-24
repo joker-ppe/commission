@@ -50,7 +50,7 @@
     ]
   },
   {
-    "agentName": "Gapbien",
+    "agentName": "Agent Biên",
     "users": [
       {
         "userName": "6LjQBst4QZ",
@@ -135,7 +135,7 @@
     ]
   },
   {
-    "agentName": "Mr Lee",
+    "agentName": "Ms LamAnh",
     "users": [
       {
         "userName": "qjI8lOZl2t",
@@ -150,7 +150,7 @@
     ]
   },
   {
-    "agentName": "Agent bé",
+    "agentName": "Agent Bé",
     "users": [
       {
         "userName": "3C3nrwXbdo",
@@ -165,7 +165,7 @@
     ]
   },
   {
-    "agentName": "BOSSS VIP",
+    "agentName": "BOSS VIP",
     "users": [
       {
         "userName": "9z4gsNz83Z",
@@ -226,18 +226,6 @@
         "userName": "NyiBl0aBIi",
         "mem": "M56",
         "ag": "AG10 / 50%"
-      }
-    ]
-  },
-  {
-    "agentName": "Agent Demo",
-    "users": [
-      {
-        "userName": "J5OCeHUotW",
-        "mem": "no data",
-        "ag": "no agent / 0%"
-      }
-    ]
   },
   {
     "agentName": "Agent Xeko",
@@ -289,4 +277,4 @@
       }
     ]
   }
-]
+]}]
