@@ -29,7 +29,7 @@
       },
       {
         "userName": "WDS3T0KPJb",
-         "mem": "M76",
+        "mem": "M76",
         "ag": "AG17 / 70%"
       },
       {
@@ -182,7 +182,7 @@
         "mem": "M31",
         "ag": "AG16 / 15%"
       },
-       {
+      {
         "userName": "zN0Jbedi0t",
         "mem": "M67",
         "ag": "AG16 / 15%"
@@ -281,6 +281,16 @@
         "userName": "OhKn6d4tak",
         "mem": "M44",
         "ag": "AG13 / 80%"
+      }
+    ]
+  },
+  {
+    "agentName": "Agent Hưởng",
+    "users": [
+      {
+        "userName": "f1aKRoVbkz",
+        "mem": "M65",
+        "ag": "AG25 / 50%"
       }
     ]
   }
