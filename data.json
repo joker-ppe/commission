@@ -29,7 +29,7 @@
       },
       {
         "userName": "WDS3T0KPJb",
-        "mem": "M76",
+         "mem": "M76",
         "ag": "AG17 / 70%"
       },
       {
@@ -140,12 +140,17 @@
       {
         "userName": "qjI8lOZl2t",
         "mem": "M46",
-        "ag": "AG15 / 20%"
+        "ag": "AG15 / 32%"
       },
       {
         "userName": "0GugEltr7c",
         "mem": "M47",
-        "ag": "AG15 / 20%"
+        "ag": "AG15 / 32%"
+      },
+      {
+        "userName": "SMYWRcOYWx",
+        "mem": "M16",
+        "ag": "AG30 / 32%"
       }
     ]
   },
@@ -177,7 +182,7 @@
         "mem": "M31",
         "ag": "AG16 / 15%"
       },
-      {
+       {
         "userName": "zN0Jbedi0t",
         "mem": "M67",
         "ag": "AG16 / 15%"
@@ -226,8 +231,6 @@
         "userName": "NyiBl0aBIi",
         "mem": "M56",
         "ag": "AG10 / 50%"
-      }
-    ]
   },
   {
     "agentName": "Agent Xeko",
@@ -279,4 +282,4 @@
       }
     ]
   }
-]
+]}]
