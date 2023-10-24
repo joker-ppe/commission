@@ -29,7 +29,7 @@
       },
       {
         "userName": "WDS3T0KPJb",
-         "mem": "M76",
+        "mem": "M76",
         "ag": "AG17 / 70%"
       },
       {
@@ -177,7 +177,7 @@
         "mem": "M31",
         "ag": "AG16 / 15%"
       },
-       {
+      {
         "userName": "zN0Jbedi0t",
         "mem": "M67",
         "ag": "AG16 / 15%"
@@ -226,8 +226,8 @@
         "userName": "NyiBl0aBIi",
         "mem": "M56",
         "ag": "AG10 / 50%"
-        }
-        ]
+      }
+    ]
   },
   {
     "agentName": "Agent Xeko",
@@ -279,4 +279,4 @@
       }
     ]
   }
-]}]
+]
