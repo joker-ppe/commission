@@ -136,6 +136,11 @@
         "userName": "ywXXmPI0yt",
         "mem": "M88",
         "ag": "AG19 / 32%"
+      },
+      {
+        "userName": "SMYWRcOYWx",
+        "mem": "M16",
+        "ag": "AG30 / 32%"
       }
     ]
   },
@@ -151,11 +156,6 @@
         "userName": "0GugEltr7c",
         "mem": "M47",
         "ag": "AG15 / 20%"
-      },
-      {
-        "userName": "SMYWRcOYWx",
-        "mem": "M16",
-        "ag": "AG30 / 32%"
       }
     ]
   },
