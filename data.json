@@ -18,6 +18,16 @@
     "agentName": "Lucky",
     "users": [
       {
+        "userName": "PGFgzfcw1g",
+        "mem": "M59",
+        "ag": "AG12 / 50%"
+      },
+      {
+        "userName": "WDS3T0KPJb",
+        "mem": "M76",
+        "ag": "AG17 / 50%"
+      },
+      {
         "userName": "zShVI5YbI8",
         "mem": "M6",
         "ag": "AG2 / 20%"
@@ -26,11 +36,6 @@
         "userName": "pt8kwotUnp",
         "mem": "M77",
         "ag": "AG2 / 20%"
-      },
-      {
-        "userName": "WDS3T0KPJb",
-        "mem": "M76",
-        "ag": "AG17 / 50%"
       },
       {
         "userName": "jqt49kAmWX",
@@ -46,11 +51,6 @@
         "userName": "Pv67SjEwqT",
         "mem": "M7",
         "ag": "AG5 / 20%"
-      },
-      {
-        "userName": "PGFgzfcw1g",
-        "mem": "M59",
-        "ag": "AG12 / 50%"
       }
     ]
   },
@@ -103,16 +103,6 @@
         "ag": "AG18 / 32%"
       },
       {
-        "userName": "TLUeAJKcte",
-        "mem": "M36",
-        "ag": "AG22 / 32%"
-      },
-      {
-        "userName": "XZJkPI5AnJ",
-        "mem": "M25",
-        "ag": "AG23 / 32%"
-      },
-      {
         "userName": "ddDMBxaVDD",
         "mem": "M86",
         "ag": "AG19 / 32%"
@@ -136,6 +126,16 @@
         "userName": "ywXXmPI0yt",
         "mem": "M88",
         "ag": "AG19 / 32%"
+      },
+      {
+        "userName": "TLUeAJKcte",
+        "mem": "M36",
+        "ag": "AG22 / 32%"
+      },
+      {
+        "userName": "XZJkPI5AnJ",
+        "mem": "M25",
+        "ag": "AG23 / 32%"
       },
       {
         "userName": "SMYWRcOYWx",
@@ -190,7 +190,7 @@
       {
         "userName": "DhOwQnvh6K",
         "mem": "M31",
-        "ag": "AG79 / 50%"
+        "ag": "AG16 / 50%"
       }
     ]
   },
