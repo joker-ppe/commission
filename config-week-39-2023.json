@@ -78,5 +78,15 @@
         "ag": "AG11 / 0%"
       }
     ]
+  },
+  {
+    "agentName": "Agent Demo",
+    "users": [
+      {
+        "userName": "J5OCeHUotW",
+        "mem": "M99",
+        "ag": "AGD / 0%"
+      }
+    ]
   }
 ]
