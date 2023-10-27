@@ -244,7 +244,7 @@
     "users": [
       {
         "userName": "ybl2Slsrws",
-        "mem": "M96",
+        "mem": "M26",
         "ag": "AG24 / 50%"
       },
       {
@@ -254,27 +254,27 @@
       },
       {
         "userName": "jn3uBfCxru",
-        "mem": "M26",
-        "ag": "AG24 / 50%"
-      },
-      {
-        "userName": "LQ34Vd0lro",
         "mem": "M68",
         "ag": "AG24 / 50%"
       },
       {
-        "userName": "fiSiKtBOfF",
+        "userName": "LQ34Vd0lro",
         "mem": "M93",
         "ag": "AG24 / 50%"
       },
       {
+        "userName": "fiSiKtBOfF",
+        "mem": "M96",
+        "ag": "AG24 / 50%"
+      },
+      {
         "userName": "SX9iA2VyDN",
-        "mem": "M62",
+        "mem": "M27",
         "ag": "AG24 / 50%"
       },
       {
         "userName": "EZvJKSA7M1",
-        "mem": "M27",
+        "mem": "M62",
         "ag": "AG24 / 50%"
       }
     ]
