@@ -66,6 +66,11 @@
         "userName": "1LnO1dXVK1",
         "mem": "M106",
         "ag": "AG5 / 20%"
+      },
+      {
+        "userName": "MI9U5hC73X",
+        "mem": "M109",
+        "ag": "AG5 / 20%"
       }
     ]
   },
@@ -210,26 +215,6 @@
     ]
   },
   {
-    "agentName": "BOSS VIP",
-    "users": [
-      {
-        "userName": "9z4gsNz83Z",
-        "mem": "M53",
-        "ag": "AG16 / 20%"
-      },
-      {
-        "userName": "eWExyXQ2lq",
-        "mem": "M50",
-        "ag": "AG16 / 20%"
-      },
-      {
-        "userName": "lgqidtKAIM",
-        "mem": "M103",
-        "ag": "AG16 / 30%"
-      }
-    ]
-  },
-  {
     "agentName": "Việt Đoàn",
     "users": [
       {
@@ -283,38 +268,8 @@
     "agentName": "Agent Xeko",
     "users": [
       {
-        "userName": "ybl2Slsrws",
-        "mem": "M26",
-        "ag": "AG24 / 50%"
-      },
-      {
-        "userName": "fOhyaH4gvb",
-        "mem": "M66",
-        "ag": "AG24 / 50%"
-      },
-      {
-        "userName": "jn3uBfCxru",
-        "mem": "M68",
-        "ag": "AG24 / 50%"
-      },
-      {
-        "userName": "LQ34Vd0lro",
-        "mem": "M93",
-        "ag": "AG24 / 50%"
-      },
-      {
         "userName": "fiSiKtBOfF",
         "mem": "M96",
-        "ag": "AG24 / 50%"
-      },
-      {
-        "userName": "SX9iA2VyDN",
-        "mem": "M27",
-        "ag": "AG24 / 50%"
-      },
-      {
-        "userName": "EZvJKSA7M1",
-        "mem": "M62",
         "ag": "AG24 / 50%"
       }
     ]
@@ -353,16 +308,5 @@
         "ag": "AG32 / 0%"
       }
     ]
-  },
-  {
-    "agentName": "Demo",
-    "users": [
-      {
-        "userName": "zHMSESVu8q",
-        "mem": "M107",
-        "ag": "AGDEMO / 0%"
-      }
-    ]
   }
 ]
-
