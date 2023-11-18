@@ -318,5 +318,15 @@
         "ag": "AG32 / 0%"
       }
     ]
+  },
+  {
+    "agentName": "AG Debit",
+    "users": [
+      {
+        "userName": "eLXf3Yk4ut",
+        "mem": "M102",
+        "ag": "AG31 / 0%"
+      }
+    ]
   }
 ]
