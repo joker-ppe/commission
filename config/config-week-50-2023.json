@@ -66,6 +66,12 @@
     "accountPercent": 80
   },
   {
+    "accountName": "csmylinh2",
+    "accountCode": "QAlzZo1xz6",
+    "accountLevel": "Master",
+    "accountPercent": 50
+  },
+  {
     "accountName": "csmylinh",
     "accountCode": "QETuiTcl2N",
     "accountLevel": "Master",
@@ -303,6 +309,24 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ma2t2",
+    "accountCode": "euDtxDW1qm",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ma2t",
+    "accountCode": "vbwroZq8El",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "anh3001",
+    "accountCode": "85yxkaaOCN",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
