@@ -21,7 +21,7 @@
     "accountName": "dubaix68",
     "accountCode": "u7qoyuu8mW",
     "accountLevel": "Super",
-    "accountPercent": 20
+    "accountPercent": 70
   },
   {
     "accountName": "dubai",
@@ -64,6 +64,18 @@
     "accountCode": "hfRCTGho4e",
     "accountLevel": "Super",
     "accountPercent": 80
+  },
+  {
+    "accountName": "cx1112",
+    "accountCode": "cSjNLzx8WW",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "agent.hn508",
+    "accountCode": "vOowCnXl2B",
+    "accountLevel": "Master",
+    "accountPercent": 50
   },
   {
     "accountName": "abu50",
@@ -351,6 +363,18 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "kah02",
+    "accountCode": "7UjyK4RFRK",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "kah01",
+    "accountCode": "DggZT3kG4d",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
