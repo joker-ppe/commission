@@ -72,6 +72,30 @@
     "accountPercent": 80
   },
   {
+    "accountName": "ag.hn606",
+    "accountCode": "3hjEPGWA6L",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ag.hn605",
+    "accountCode": "XvzBKYQL4n",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ag.hn604",
+    "accountCode": "G124tC44Dk",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ag.hn603",
+    "accountCode": "Do1UzcjXRA",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "boss20",
     "accountCode": "xNxHwiaHD8",
     "accountLevel": "Master",
@@ -279,7 +303,7 @@
     "accountName": "ag1111",
     "accountCode": "6cM9GLXVLL",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "agent.d50",
@@ -465,6 +489,24 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "anh60540",
+    "accountCode": "QmQM5PImOG",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "anh60440",
+    "accountCode": "QmbpU0mzz6",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "anh60340",
+    "accountCode": "F8jeikBOff",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
@@ -795,7 +837,7 @@
     "accountName": "ag1102",
     "accountCode": "CTPjBaKlkb",
     "accountLevel": "Agent",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "qaz001",
