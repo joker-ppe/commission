@@ -135,7 +135,7 @@
     "accountName": "login1",
     "accountCode": "lNnb9k01XZ",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "abcd1",
@@ -153,7 +153,7 @@
     "accountName": "cx1114",
     "accountCode": "3WkHlJKYjh",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "game123456",
@@ -243,7 +243,7 @@
     "accountName": "cx1113",
     "accountCode": "zkJhTh5T3r",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "ka68",
@@ -267,13 +267,13 @@
     "accountName": "hc6868",
     "accountCode": "J3hvUq1Cbn",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "v8686",
     "accountCode": "Jls9g6kP9b",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "mrbb",
@@ -285,7 +285,7 @@
     "accountName": "cx1112",
     "accountCode": "cSjNLzx8WW",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "agent.hn508",
@@ -321,7 +321,7 @@
     "accountName": "cx1111",
     "accountCode": "4qpQO7PF4Z",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "agent.hn505",
@@ -333,7 +333,7 @@
     "accountName": "xv9999",
     "accountCode": "I2wVR4lJpW",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "csmylinh2",
@@ -393,7 +393,7 @@
     "accountName": "ag1111",
     "accountCode": "6cM9GLXVLL",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "agent.d50",
@@ -405,25 +405,25 @@
     "accountName": "bien1111",
     "accountCode": "lrJ4zCAKtG",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "vip1111",
     "accountCode": "ICrAcboAmv",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "h1111",
     "accountCode": "kTNLtulhQn",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "x1111",
     "accountCode": "9d9kRgHtIV",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "agent.xmedia",
@@ -555,7 +555,7 @@
     "accountName": "agentrd",
     "accountCode": "Dwz9SulgGU",
     "accountLevel": "Master",
-    "accountPercent": 7
+    "accountPercent": 0
   },
   {
     "accountName": "agdoanviet",
@@ -645,7 +645,7 @@
     "accountName": "login2",
     "accountCode": "oxSHYoZCr4",
     "accountLevel": "Agent",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "ldhp01",
