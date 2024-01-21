@@ -132,6 +132,12 @@
     "accountPercent": 80
   },
   {
+    "accountName": "khalifa70",
+    "accountCode": "zu7sYVrcFJ",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "sp.burj02",
     "accountCode": "k9JRetGQYI",
     "accountLevel": "Master",
@@ -165,7 +171,7 @@
     "accountName": "sp.burj01",
     "accountCode": "mzdNk2acdz",
     "accountLevel": "Master",
-    "accountPercent": null
+    "accountPercent": 0
   },
   {
     "accountName": "khalifa",
@@ -219,7 +225,7 @@
     "accountName": "ag.hn201",
     "accountCode": "1qVKnM7F6k",
     "accountLevel": "Master",
-    "accountPercent": null
+    "accountPercent": 0
   },
   {
     "accountName": "ag.hn610",
@@ -762,6 +768,12 @@
     "accountPercent": 0
   },
   {
+    "accountName": "burj70",
+    "accountCode": "qYax9xrmfL",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
     "accountName": "mafia",
     "accountCode": "TBRCsnRDoB",
     "accountLevel": "Agent",
@@ -1251,13 +1263,13 @@
     "accountName": "kah02",
     "accountCode": "7UjyK4RFRK",
     "accountLevel": "Agent",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "kah01",
     "accountCode": "DggZT3kG4d",
     "accountLevel": "Agent",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "rrv678",
