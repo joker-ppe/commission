@@ -213,7 +213,7 @@
     "accountName": "top1102",
     "accountCode": "dVqb1PNPZt",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "ag.hn201",
@@ -285,7 +285,7 @@
     "accountName": "hh68",
     "accountCode": "BEoqYxgRHu",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "sp002",
@@ -1704,4 +1704,3 @@
     "accountPercent": 80
   }
 ]
-
