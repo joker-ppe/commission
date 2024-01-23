@@ -4,10 +4,17 @@
     "nickName": "sp.hn",
     "super": "super1;dqwq;qwwqd;asss",
     "master": "master1;mst3;wdwq"
-  },{
+  },
+  {
     "name": "Cổ đông 2",
     "nickName": "cd2",
     "super": "super13;dqwq;qwwqd;asss",
     "master": ""
+  },
+  {
+    "name": "Test2",
+    "nickName": "sp.test",
+    "super": "locphatx68;sp.hn1",
+    "master": "khalifa"
   }
 ]
