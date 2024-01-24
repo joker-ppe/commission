@@ -2,8 +2,8 @@
   {
     "name": "Cổ đông Hoàng Nỉ",
     "nickName": "sp.hn",
-    "super": "sp.d65",
-    "master": ""
+    "super": "super1;dqwq;qwwqd;asss",
+    "master": "master1;mst3;wdwq"
   },
   {
     "name": "Cổ đông 2",
@@ -16,5 +16,11 @@
     "nickName": "sp.test",
     "super": "locphatx68;sp.hn1",
     "master": "khalifa"
+  },
+  {
+    "name": "Cổ Đông Joker",
+    "nickName": "sp.joker",
+    "super": "sp.hn1;sp.hn2",
+    "master": "agent.hn501;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;"
   }
 ]
