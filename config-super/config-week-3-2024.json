@@ -1,15 +1,15 @@
 [
   {
-    "name": "Cổ đông Hoàng Nỉ",
-    "nickName": "sp.hn",
+    "name": "\bCổ Đông Burj Khalifa",
+    "nickName": "Khalifa",
     "super": "super1;dqwq;qwwqd;asss",
     "master": "master1;mst3;wdwq"
   },
   {
-    "name": "Cổ đông 2",
-    "nickName": "cd2",
-    "super": "locphatx68;sp.hn1",
-    "master": "gah8989"
+    "name": "\bCổ Đông CSMYLINH",
+    "nickName": "\bcsmylinh",
+    "super": "locphatx68;",
+    "master": "csmylinh2;csmylinnh3"
   },
   {
     "name": "Test2",
@@ -18,8 +18,8 @@
     "master": "khalifa"
   },
   {
-    "name": "Cổ Đông Joker",
-    "nickName": "sp.joker",
+    "name": "Cổ Đông HNI",
+    "nickName": "hni",
     "super": "sp.hn1;sp.hn2",
     "master": "agent.hn501;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;"
   }
