@@ -1,26 +1,32 @@
 [
   {
-    "name": "Cổ đông Hoàng Nỉ",
-    "nickName": "sp.hn",
-    "super": "super1;dqwq;qwwqd;asss",
-    "master": "master1;mst3;wdwq"
+    "name": "Cổ Đông THD",
+    "nickName": "thd",
+    "super": "sp.d65;sp.d50;dx68; thantai;sp.d77",
+    "master": ""
   },
   {
-    "name": "Cổ đông 2",
-    "nickName": "cd2",
-    "super": "locphatx68;sp.hn1",
-    "master": "gah8989"
+    "name": "Cổ đông Csmylinh",
+    "nickName": "csmylinh",
+    "super": "locphatx68",
+    "master": "csmylinh2;csmylinh3"
   },
   {
-    "name": "Test2",
-    "nickName": "sp.test",
-    "super": "locphatx68;sp.hn1",
-    "master": "khalifa"
+    "name": "Cổ đông Khalifa",
+    "nickName": "khalifa",
+    "super": "sp.burj",
+    "master": "khalifa;khalifa70"
   },
   {
-    "name": "Cổ Đông Joker",
-    "nickName": "sp.joker",
+    "name": "Cổ Đông Hni",
+    "nickName": "hn",
     "super": "sp.hn1;sp.hn2",
     "master": "agent.hn501;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;"
+  },
+  {
+    "name": "Cổ Đông X.Media",
+    "nickName": "xmedia",
+    "super": "supper.xmedia",
+    "master": ""
   }
 ]
