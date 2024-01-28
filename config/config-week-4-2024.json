@@ -786,6 +786,12 @@
     "accountPercent": 0
   },
   {
+    "accountName": "hk11",
+    "accountCode": "RX6IZnN0MI",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
     "accountName": "phat68002",
     "accountCode": "eEv080ZLYx",
     "accountLevel": "Agent",
@@ -927,7 +933,7 @@
     "accountName": "bruce68",
     "accountCode": "sGr7zh4RdP",
     "accountLevel": "Agent",
-    "accountPercent": 50
+    "accountPercent": 0
   },
   {
     "accountName": "anh21002",
@@ -1335,7 +1341,7 @@
     "accountName": "kah02",
     "accountCode": "7UjyK4RFRK",
     "accountLevel": "Agent",
-    "accountPercent": 50
+    "accountPercent": 0
   },
   {
     "accountName": "kah01",
