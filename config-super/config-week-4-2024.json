@@ -42,9 +42,27 @@
     "master": ""
   },
   {
-    "name": "mayle",
-    "nickName": "mayle",
+    "name": "\bKC",
+    "nickName": "kc",
     "super": "",
-    "master": "agmayle"
+    "master": "kythu1234;sn6802"
+  },
+  {
+    "name": "Boss VIP",
+    "nickName": "agbossvip",
+    "super": "",
+    "master": "ag.bossvip"
+  },
+  {
+    "name": "LV",
+    "nickName": "agentlv",
+    "super": "",
+    "master": "agent.lv"
+  },
+  {
+    "name": "Brucelee",
+    "nickName": "brucelee",
+    "super": "",
+    "master": "brucelee"
   }
 ]
