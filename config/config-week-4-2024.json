@@ -39,7 +39,7 @@
     "accountName": "thantai",
     "accountCode": "EppkInpE3h",
     "accountLevel": "Super",
-    "accountPercent": 55
+    "accountPercent": 60
   },
   {
     "accountName": "dx68",
@@ -130,6 +130,12 @@
     "accountCode": "hfRCTGho4e",
     "accountLevel": "Super",
     "accountPercent": 80
+  },
+  {
+    "accountName": "aphat68",
+    "accountCode": "NHSYzOz4Sc",
+    "accountLevel": "Master",
+    "accountPercent": 50
   },
   {
     "accountName": "abumilo",
@@ -261,7 +267,7 @@
     "accountName": "hoang40",
     "accountCode": "O9UqQxR8e3",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 40
   },
   {
     "accountName": "ag.hn703",
@@ -387,7 +393,7 @@
     "accountName": "boss20",
     "accountCode": "xNxHwiaHD8",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 20
   },
   {
     "accountName": "phamlai",
@@ -423,7 +429,7 @@
     "accountName": "kevin68",
     "accountCode": "ySoXh8GK72",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "kv68",
@@ -477,7 +483,7 @@
     "accountName": "mrbb",
     "accountCode": "VPlw6xSGoZ",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "cx1112",
@@ -639,7 +645,7 @@
     "accountName": "dubai123",
     "accountCode": "RUutslbX0d",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "agent.lucky80",
@@ -777,6 +783,24 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "phat68002",
+    "accountCode": "eEv080ZLYx",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "phat68001",
+    "accountCode": "RCUCD2GO5Q",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "qqq10",
+    "accountCode": "ipzrpmBrhj",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
