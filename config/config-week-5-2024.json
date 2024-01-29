@@ -171,7 +171,7 @@
     "accountName": "sn6801",
     "accountCode": "cNc6f8UGuZ",
     "accountLevel": "Master",
-    "accountPercent": 70
+    "accountPercent": 80
   },
   {
     "accountName": "sn02",
@@ -579,7 +579,7 @@
     "accountName": "ag.bossvip",
     "accountCode": "TLbQ7wOYke",
     "accountLevel": "Master",
-    "accountPercent": 20
+    "accountPercent": 50
   },
   {
     "accountName": "agent.hn20",
@@ -786,6 +786,18 @@
     "accountPercent": 0
   },
   {
+    "accountName": "ag8888",
+    "accountCode": "gFQRLgAz6l",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "hk11",
+    "accountCode": "RX6IZnN0MI",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
     "accountName": "phat68002",
     "accountCode": "eEv080ZLYx",
     "accountLevel": "Agent",
@@ -927,7 +939,7 @@
     "accountName": "bruce68",
     "accountCode": "sGr7zh4RdP",
     "accountLevel": "Agent",
-    "accountPercent": 50
+    "accountPercent": 0
   },
   {
     "accountName": "anh21002",
@@ -1335,7 +1347,7 @@
     "accountName": "kah02",
     "accountCode": "7UjyK4RFRK",
     "accountLevel": "Agent",
-    "accountPercent": 50
+    "accountPercent": 0
   },
   {
     "accountName": "kah01",
@@ -1467,7 +1479,7 @@
     "accountName": "ag.martin50",
     "accountCode": "42UWASsq4K",
     "accountLevel": "Agent",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "mm01",
