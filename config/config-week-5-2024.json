@@ -1,5 +1,17 @@
 [
   {
+    "accountName": "super007",
+    "accountCode": "if5StcwK6o",
+    "accountLevel": "Super",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "dd2080",
+    "accountCode": "0aj32EZlRZ",
+    "accountLevel": "Super",
+    "accountPercent": 0
+  },
+  {
     "accountName": "x7979",
     "accountCode": "41uicG9uII",
     "accountLevel": "Super",
@@ -117,7 +129,7 @@
     "accountName": "locphatx68",
     "accountCode": "uYE34IgyDh",
     "accountLevel": "Super",
-    "accountPercent": 20
+    "accountPercent": 15
   },
   {
     "accountName": "joker.super",
@@ -130,6 +142,48 @@
     "accountCode": "hfRCTGho4e",
     "accountLevel": "Super",
     "accountPercent": 80
+  },
+  {
+    "accountName": "agent007",
+    "accountCode": "oyPwzLfDRW",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "pb111222",
+    "accountCode": "MoqMmep8fW",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ag.hn251",
+    "accountCode": "7dqPF0Vm32",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "coto68",
+    "accountCode": "v3Qx73xG2h",
+    "accountLevel": "Master",
+    "accountPercent": 50
+  },
+  {
+    "accountName": "ag.hn250",
+    "accountCode": "EpHGzpj8NJ",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "lixi",
+    "accountCode": "FNmbCpFrUT",
+    "accountLevel": "Master",
+    "accountPercent": 50
+  },
+  {
+    "accountName": "anh6074002",
+    "accountCode": "IsLFXjxcnG",
+    "accountLevel": "Master",
+    "accountPercent": 0
   },
   {
     "accountName": "aphat68",
@@ -579,7 +633,7 @@
     "accountName": "ag.bossvip",
     "accountCode": "TLbQ7wOYke",
     "accountLevel": "Master",
-    "accountPercent": 20
+    "accountPercent": 50
   },
   {
     "accountName": "agent.hn20",
@@ -783,6 +837,54 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "realagent007",
+    "accountCode": "w5YfaJGkhs",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "pb9090",
+    "accountCode": "TqqqqfjRyO",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "mc25101",
+    "accountCode": "XpOdDDZhAb",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "coto6868",
+    "accountCode": "In68187rBx",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "aqhp25001",
+    "accountCode": "RhMKBrYwgB",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "lixi68",
+    "accountCode": "eaRlmnr2W7",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "anh6074003",
+    "accountCode": "bwxJf7XlsP",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ag8888",
+    "accountCode": "gFQRLgAz6l",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
