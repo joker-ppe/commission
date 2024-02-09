@@ -213,6 +213,11 @@
     "agentName": "BOSS VIP",
     "users": [
       {
+        "userName": "zN0Jbedi0t",
+        "mem": "",
+        "ag": " / 50%"
+      },
+      {
         "userName": "9z4gsNz83Z",
         "mem": "M53",
         "ag": "AG16 / 20%"
@@ -226,6 +231,11 @@
         "userName": "lgqidtKAIM",
         "mem": "M103",
         "ag": "AG16 / 30%"
+      },
+      {
+        "userName": "DhOwQnvh6K",
+        "mem": "M31",
+        "ag": "AG16 / 50%"
       }
     ]
   },
