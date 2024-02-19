@@ -51,7 +51,7 @@
     "accountName": "thantai",
     "accountCode": "EppkInpE3h",
     "accountLevel": "Super",
-    "accountPercent": 60
+    "accountPercent": 80
   },
   {
     "accountName": "dx68",
@@ -142,6 +142,36 @@
     "accountCode": "hfRCTGho4e",
     "accountLevel": "Super",
     "accountPercent": 80
+  },
+  {
+    "accountName": "ahhn30001",
+    "accountCode": "GcLLhOnbSP",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ag.hn300",
+    "accountCode": "RX3jSsgDLG",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ahhn70101",
+    "accountCode": "04XuIplNto",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "abctest123",
+    "accountCode": "DRUzHehDLN",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "test01",
+    "accountCode": "UOxNMswKM2",
+    "accountLevel": "Master",
+    "accountPercent": 0
   },
   {
     "accountName": "agent007",
@@ -837,6 +867,24 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ahhn300001",
+    "accountCode": "5qA9DmhS90",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "chai1234",
+    "accountCode": "KTAjMsBE2q",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "test0101",
+    "accountCode": "HLVzT66OHD",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
@@ -1896,4 +1944,3 @@
     "accountPercent": 80
   }
 ]
-
