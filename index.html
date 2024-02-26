@@ -398,7 +398,7 @@
         }
 
         if (pointDe.value !== '0') {
-          moneyDe.value = (pointDe.value * 705).toLocaleString();
+          moneyDe.value = (parseFloat(pointDe.value.replaceAll(",","")) * 705).toLocaleString();
           return;
         }
       });
@@ -409,7 +409,7 @@
         }
 
         if (pointLo.value !== '0') {
-          moneyLo.value = (pointLo.value * 21680).toLocaleString();
+          moneyLo.value = (parseFloat(pointLo.value.replaceAll(",","")) * 21680).toLocaleString();
           return;
         }
       });
