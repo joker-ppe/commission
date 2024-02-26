@@ -81,15 +81,19 @@
         <th></th>
         <th>Tiền</th>
         <th>Điểm</th>
+        <th>Thưởng</th>
         <th></th>
       </tr>
       <tr>
         <td>Đề</td>
         <td>
-          <input id="moneyDe" type="text" value="0" />
+          <input id="moneyDe" type="text" value="" />
         </td>
         <td>
-          <input id="pointDe" type="text" value="0" />
+          <input id="pointDe" type="text" value="" />
+        </td>
+        <td>
+          <input id="incomeDe" type="text" value="0" disabled />
         </td>
         <td>
           <button id="btnExchangeDe" type="button" value="Đổi">Đổi</button>
@@ -98,11 +102,15 @@
       <tr>
         <td>Lô</td>
         <td>
-          <input id="moneyLo" type="text" value="0" />
+          <input id="moneyLo" type="text" value="" />
         </td>
         <td>
-          <input id="pointLo" type="text" value="0" />
+          <input id="pointLo" type="text" value="" />
         </td>
+        <td>
+          <input id="incomeLo" type="text" value="0" disabled />
+        </td>
+
         <td>
           <button id="btnExchangeLo" type="button" value="Đổi">Đổi</button>
         </td>
@@ -365,51 +373,77 @@
 
       const moneyDe = document.getElementById("moneyDe");
       const pointDe = document.getElementById("pointDe");
+      const incomeDe = document.getElementById("incomeDe");
       const moneyLo = document.getElementById("moneyLo");
       const pointLo = document.getElementById("pointLo");
+      const incomeLo = document.getElementById("incomeLo");
       const btnExchangeDe = document.getElementById("btnExchangeDe");
       const btnExchangeLo = document.getElementById("btnExchangeLo");
 
       moneyDe.addEventListener("input", function () {
-        let number = parseInt(event.target.value.replace(/,/g, ''));
-        event.target.value = isNaN(number) ? '' : number.toLocaleString();
+        let number = parseInt(event.target.value.replace(/,/g, ""));
+        event.target.value = isNaN(number) ? "" : number.toLocaleString();
         pointDe.value = "0";
       });
       pointDe.addEventListener("input", function () {
-        let number = parseInt(event.target.value.replaceAll(",",""));
-        event.target.value = isNaN(number) ? '' : number.toLocaleString();
+        let number = parseInt(event.target.value.replaceAll(",", ""));
+        event.target.value = isNaN(number) ? "" : number.toLocaleString();
         moneyDe.value = "0";
       });
       moneyLo.addEventListener("input", function () {
-        let number = parseInt(event.target.value.replaceAll(",",""));
-        event.target.value = isNaN(number) ? '' : number.toLocaleString();
+        let number = parseInt(event.target.value.replaceAll(",", ""));
+        event.target.value = isNaN(number) ? "" : number.toLocaleString();
         pointLo.value = "0";
       });
       pointLo.addEventListener("input", function () {
-        let number = parseInt(event.target.value.replaceAll(",",""));
-        event.target.value = isNaN(number) ? '' : number.toLocaleString();
+        let number = parseInt(event.target.value.replaceAll(",", ""));
+        event.target.value = isNaN(number) ? "" : number.toLocaleString();
         moneyLo.value = "0";
       });
 
       btnExchangeDe.addEventListener("click", function () {
-        if (moneyDe.value !== '0') {
-          pointDe.value = Math.round(parseFloat(moneyDe.value.replaceAll(",","")) / 705).toLocaleString();
+        if (moneyDe.value !== "0") {
+          pointDe.value = Math.round(
+            parseFloat(moneyDe.value.replaceAll(",", "")) / 705
+          ).toLocaleString();
+          incomeDe.value = Math.round(
+            parseFloat(pointDe.value.replaceAll(",", "")) * 70000 -
+              parseFloat(moneyDe.value.replaceAll(",", ""))
+          ).toLocaleString();
           return;
         }
 
-        if (pointDe.value !== '0') {
-          moneyDe.value = (parseFloat(pointDe.value.replaceAll(",","")) * 705).toLocaleString();
+        if (pointDe.value !== "0") {
+          moneyDe.value = (
+            parseFloat(pointDe.value.replaceAll(",", "")) * 705
+          ).toLocaleString();
+          incomeDe.value = Math.round(
+            parseFloat(pointDe.value.replaceAll(",", "")) * 70000 -
+              parseFloat(moneyDe.value.replaceAll(",", ""))
+          ).toLocaleString();
           return;
         }
       });
       btnExchangeLo.addEventListener("click", function () {
-        if (moneyLo.value !== '0') {
-          pointLo.value = Math.round(parseFloat(moneyLo.value.replaceAll(",","")) / 21680).toLocaleString();
+        if (moneyLo.value !== "0") {
+          pointLo.value = Math.round(
+            parseFloat(moneyLo.value.replaceAll(",", "")) / 21680
+          ).toLocaleString();
+          incomeLo.value = Math.round(
+            parseFloat(pointLo.value.replaceAll(",", "")) * 80000 -
+              parseFloat(moneyLo.value.replaceAll(",", ""))
+          ).toLocaleString();
           return;
         }
 
-        if (pointLo.value !== '0') {
-          moneyLo.value = (parseFloat(pointLo.value.replaceAll(",","")) * 21680).toLocaleString();
+        if (pointLo.value !== "0") {
+          moneyLo.value = (
+            parseFloat(pointLo.value.replaceAll(",", "")) * 21680
+          ).toLocaleString();
+          incomeLo.value = Math.round(
+            parseFloat(pointLo.value.replaceAll(",", "")) * 80000 -
+              parseFloat(moneyLo.value.replaceAll(",", ""))
+          ).toLocaleString();
           return;
         }
       });
