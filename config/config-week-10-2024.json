@@ -1,5 +1,17 @@
 [
   {
+    "accountName": "lv28",
+    "accountCode": "K8QpT71o9s",
+    "accountLevel": "Super",
+    "accountPercent": 80
+  },
+  {
+    "accountName": "usa68",
+    "accountCode": "YwNLUidAE3",
+    "accountLevel": "Super",
+    "accountPercent": 80
+  },
+  {
     "accountName": "super007",
     "accountCode": "if5StcwK6o",
     "accountLevel": "Super",
@@ -9,7 +21,7 @@
     "accountName": "dd2080",
     "accountCode": "0aj32EZlRZ",
     "accountLevel": "Super",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "x7979",
@@ -144,6 +156,24 @@
     "accountPercent": 80
   },
   {
+    "accountName": "lv2801",
+    "accountCode": "0kouCnea0g",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "testsuper tri",
+    "accountCode": "j5CXPKOERa",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "congty9999",
+    "accountCode": "xwfq0Llj4r",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "sn6803",
     "accountCode": "XDA25Sr8mV",
     "accountLevel": "Master",
@@ -159,7 +189,7 @@
     "accountName": "vb789",
     "accountCode": "f6CtR7GPSA",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 50
   },
   {
     "accountName": "ag.hn202",
@@ -195,7 +225,7 @@
     "accountName": "thanglong",
     "accountCode": "83QTatDDIB",
     "accountLevel": "Master",
-    "accountPercent": 60
+    "accountPercent": 80
   },
   {
     "accountName": "ahhn30001",
@@ -249,7 +279,7 @@
     "accountName": "coto68",
     "accountCode": "v3Qx73xG2h",
     "accountLevel": "Master",
-    "accountPercent": 55
+    "accountPercent": 60
   },
   {
     "accountName": "ag.hn250",
@@ -273,7 +303,7 @@
     "accountName": "aphat68",
     "accountCode": "NHSYzOz4Sc",
     "accountLevel": "Master",
-    "accountPercent": 65
+    "accountPercent": 70
   },
   {
     "accountName": "abumilo",
@@ -885,7 +915,7 @@
     "accountName": "agent.lucky",
     "accountCode": "iqi7AlLjrP",
     "accountLevel": "Master",
-    "accountPercent": 50
+    "accountPercent": 80
   },
   {
     "accountName": "agmayle",
@@ -921,6 +951,24 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "sn0202",
+    "accountCode": "BJ8Q7bJUcT",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "lv280101",
+    "accountCode": "vyAod8XxYW",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "thailan1111",
+    "accountCode": "grT2iqkMPi",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
