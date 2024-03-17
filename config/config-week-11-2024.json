@@ -411,7 +411,7 @@
     "accountName": "telmaster",
     "accountCode": "mfSb05auSR",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "top1102",
@@ -963,6 +963,24 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "kin@@@hkk",
+    "accountCode": "f2SkEbdBmK",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ksg70101",
+    "accountCode": "qLTexUESe0",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "abctest123111",
+    "accountCode": "VE5s3NEqHY",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
