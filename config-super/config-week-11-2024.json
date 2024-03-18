@@ -20,7 +20,7 @@
   {
     "name": "Cổ Đông Hni",
     "nickName": "hn",
-    "super": "sp.hn1;sp.hn2",
+    "super": "sp.hn1;sp.hn2;dd2080",
     "master": "agent.hn501;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;"
   },
   {
