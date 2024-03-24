@@ -309,7 +309,7 @@
     "accountName": "coto68",
     "accountCode": "v3Qx73xG2h",
     "accountLevel": "Master",
-    "accountPercent": 60
+    "accountPercent": 80
   },
   {
     "accountName": "ag.hn250",
@@ -957,7 +957,7 @@
     "accountName": "agentrd",
     "accountCode": "Dwz9SulgGU",
     "accountLevel": "Master",
-    "accountPercent": 80
+    "accountPercent": 50
   },
   {
     "accountName": "agdoanviet",
@@ -2244,4 +2244,3 @@
     "accountPercent": 80
   }
 ]
-
