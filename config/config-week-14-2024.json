@@ -162,6 +162,30 @@
     "accountPercent": 80
   },
   {
+    "accountName": "ag.hn205",
+    "accountCode": "aQdGAIzNcl",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "ag.hn204",
+    "accountCode": "LjI487CBLL",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "candy68",
+    "accountCode": "Iha5jQ5PW5",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "sofia",
+    "accountCode": "7TnmWFRnod",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "agent.509",
     "accountCode": "0NeIfJMMoY",
     "accountLevel": "Master",
@@ -171,7 +195,7 @@
     "accountName": "xl6868",
     "accountCode": "Mxr2tAK7nt",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 15
   },
   {
     "accountName": "japan",
@@ -1020,6 +1044,42 @@
     "accountPercent": 0
   },
   {
+    "accountName": "dt20501",
+    "accountCode": "E3bUqrDqJ1",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "adop01",
+    "accountCode": "Ac96gJuHh6",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "bk8902",
+    "accountCode": "4h7cnOFZMy",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "candy86",
+    "accountCode": "NySWBsdhMe",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "sofia68",
+    "accountCode": "mOQJLOrZx8",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "b1102",
+    "accountCode": "PzsUgC2y0t",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
     "accountName": "japan68",
     "accountCode": "xrzQEEvMfw",
     "accountLevel": "Agent",
@@ -1371,7 +1431,7 @@
     "accountName": "mafia",
     "accountCode": "TBRCsnRDoB",
     "accountLevel": "Agent",
-    "accountPercent": 50
+    "accountPercent": 0
   },
   {
     "accountName": "sp.burj0201",
@@ -2310,4 +2370,3 @@
     "accountPercent": 80
   }
 ]
-
