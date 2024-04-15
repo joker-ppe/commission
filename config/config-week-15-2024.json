@@ -162,6 +162,12 @@
     "accountPercent": 80
   },
   {
+    "accountName": "mafia01",
+    "accountCode": "GJom6CgIBT",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "ag.hn206",
     "accountCode": "GsBvooRBI4",
     "accountLevel": "Master",
@@ -1077,6 +1083,18 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "anh50001",
+    "accountCode": "19iDA9JKcb",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "mafia02",
+    "accountCode": "H00MsuGAAg",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
