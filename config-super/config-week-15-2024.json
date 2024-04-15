@@ -60,10 +60,10 @@
     "master": "agent.lv"
   },
   {
-    "name": "Brucelee",
-    "nickName": "brucelee",
+    "name": "aphat",
+    "nickName": "aphat",
     "super": "",
-    "master": "brucelee"
+    "master": "sn01;sn03;aphat68;thanglong"
   },
   {
     "name": "agmayle",
