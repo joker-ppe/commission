@@ -1,3 +1,4 @@
+
 [
   {
     "accountName": "bk88",
@@ -160,6 +161,12 @@
     "accountCode": "hfRCTGho4e",
     "accountLevel": "Super",
     "accountPercent": 80
+  },
+  {
+    "accountName": "ag.hn206",
+    "accountCode": "GsBvooRBI4",
+    "accountLevel": "Master",
+    "accountPercent": 0
   },
   {
     "accountName": "ongong68",
@@ -786,7 +793,7 @@
     "accountPercent": 50
   },
   {
-    "accountName": "abu50",
+    "accountName": "abubu",
     "accountCode": "kV7Ms7VB9W",
     "accountLevel": "Master",
     "accountPercent": 80
@@ -1071,6 +1078,12 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "cl20601",
+    "accountCode": "4bw0yzNST1",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
@@ -2424,7 +2437,7 @@
     "accountPercent": 10
   },
   {
-    "accountName": "agentbe",
+    "accountName": "agenthai",
     "accountCode": "qJkVYyhcaG",
     "accountLevel": "Agent",
     "accountPercent": 50
@@ -2448,4 +2461,3 @@
     "accountPercent": 80
   }
 ]
-
