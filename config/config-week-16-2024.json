@@ -162,6 +162,36 @@
     "accountPercent": 80
   },
   {
+    "accountName": "mastertest02",
+    "accountCode": "VIoWWOXO4h",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "mastertest01",
+    "accountCode": "IjMhsqc0CV",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "pb5050",
+    "accountCode": "tHuAG7lvji",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "saga",
+    "accountCode": "4RHIVRJ82S",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "mafia01",
+    "accountCode": "GJom6CgIBT",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "ag.hn206",
     "accountCode": "GsBvooRBI4",
     "accountLevel": "Master",
@@ -279,7 +309,7 @@
     "accountName": "sn03",
     "accountCode": "CfjBenQVGV",
     "accountLevel": "Master",
-    "accountPercent": 60
+    "accountPercent": 80
   },
   {
     "accountName": "lv2801",
@@ -351,7 +381,7 @@
     "accountName": "thanglong",
     "accountCode": "83QTatDDIB",
     "accountLevel": "Master",
-    "accountPercent": 60
+    "accountPercent": 80
   },
   {
     "accountName": "ahhn30001",
@@ -429,7 +459,7 @@
     "accountName": "aphat68",
     "accountCode": "NHSYzOz4Sc",
     "accountLevel": "Master",
-    "accountPercent": 60
+    "accountPercent": 80
   },
   {
     "accountName": "abumilo",
@@ -1077,6 +1107,42 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "agenttest02",
+    "accountCode": "tKsXOYMRFS",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "agenttest01",
+    "accountCode": "vDZJJJPrhT",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "pb505001",
+    "accountCode": "vXpBdPlvYM",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "saga68",
+    "accountCode": "O3MFdHaURD",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "anh50001",
+    "accountCode": "19iDA9JKcb",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "mafia02",
+    "accountCode": "H00MsuGAAg",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
