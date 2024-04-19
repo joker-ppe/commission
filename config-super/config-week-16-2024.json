@@ -58,5 +58,17 @@
     "nickName": "lv",
     "super": "",
     "master": "agent.lv"
+  },
+  {
+    "name": "aphat",
+    "nickName": "aphat",
+    "super": "",
+    "master": "thanglong;aphat68;sn01;sn03"
+  },
+  {
+    "name": "Saga",
+    "nickName": "saga",
+    "super": "",
+    "master": "saga"
   }
 ]
