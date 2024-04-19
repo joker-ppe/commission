@@ -58,17 +58,5 @@
     "nickName": "lv",
     "super": "",
     "master": "agent.lv"
-  },
-  {
-    "name": "Brucelee",
-    "nickName": "brucelee",
-    "super": "",
-    "master": "brucelee"
-  },
-  {
-    "name": "agmayle",
-    "nickName": "agmayle",
-    "super": "",
-    "master": "agmayle"
   }
 ]
