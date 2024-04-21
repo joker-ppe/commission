@@ -13,7 +13,7 @@
   },
   {
     "name": "RRV6868",
-    "nickName": "rrv6868",
+    "nickName": "rrv",
     "super": "",
     "master": "rrv6868"
   },
@@ -31,19 +31,19 @@
   },
   {
     "name": "ongong",
-    "nickName": "ongong",
+    "nickName": "ong",
     "super": "",
-    "master": "Ongong68"
+    "master": "ongong68"
   },
   {
     "name": "xl6868",
-    "nickName": "xuan lech",
+    "nickName": "xuan",
     "super": "",
     "master": "xl6868"
   },
   {
     "name": "KA68",
-    "nickName": "ka68",
+    "nickName": "ka",
     "super": "",
     "master": "ka68"
   },
@@ -70,5 +70,17 @@
     "nickName": "saga",
     "super": "",
     "master": "saga"
+  },
+  {
+    "name": "Ocean",
+    "nickName": "ocean",
+    "super": "",
+    "master": "agent.d50"
+  },
+  {
+    "name": "csmylinh2",
+    "nickName": "csmylinh2",
+    "super": "",
+    "master": "csmylinh2"
   }
 ]
