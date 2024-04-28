@@ -21,7 +21,7 @@
     "name": "Hni",
     "nickName": "hn",
     "super": "sp.hn1;sp.hn2;dd2080",
-    "master": "agent.hn501;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;Ag.hn500"
+    "master": "agent.hn501;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500"
   },
   {
     "name": "TOP1102",
