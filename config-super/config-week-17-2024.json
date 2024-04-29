@@ -88,5 +88,11 @@
     "nickName": "bk",
     "super": "bk68;bk88",
     "master": "bk89"
+  },
+  {
+    "name": "HKT",
+    "nickName": "huong",
+    "super": "",
+    "master": "ag.huong;masterx68"
   }
 ]
