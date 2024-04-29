@@ -180,6 +180,12 @@
     "accountPercent": 80
   },
   {
+    "accountName": "88tt01",
+    "accountCode": "TnjFHIbF3n",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "csml2",
     "accountCode": "L2Vmfrz8VI",
     "accountLevel": "Master",
@@ -963,7 +969,7 @@
     "accountName": "agent.hn501",
     "accountCode": "B9JXVwqEPp",
     "accountLevel": "Master",
-    "accountPercent": 50
+    "accountPercent": 35
   },
   {
     "accountName": "agent.dct20",
