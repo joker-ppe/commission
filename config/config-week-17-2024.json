@@ -9,7 +9,7 @@
     "accountName": "bk68",
     "accountCode": "emyAYBMYBh",
     "accountLevel": "Super",
-    "accountPercent": null
+    "accountPercent": 0
   },
   {
     "accountName": "12121212",
@@ -1185,6 +1185,12 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "hk45",
+    "accountCode": "2K3dHDmlLN",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
