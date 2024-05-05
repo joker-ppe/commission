@@ -3,13 +3,13 @@
     "accountName": "bk899",
     "accountCode": "HxsHviEueW",
     "accountLevel": "Super",
-    "accountPercent": 0
+    "accountPercent": 85
   },
   {
     "accountName": "bk68",
     "accountCode": "emyAYBMYBh",
     "accountLevel": "Super",
-    "accountPercent": 0
+    "accountPercent": 85
   },
   {
     "accountName": "12121212",
@@ -178,6 +178,12 @@
     "accountCode": "hfRCTGho4e",
     "accountLevel": "Super",
     "accountPercent": 80
+  },
+  {
+    "accountName": "bk6800",
+    "accountCode": "NktsDUq3cD",
+    "accountLevel": "Master",
+    "accountPercent": 0
   },
   {
     "accountName": "88tt01",
@@ -1149,7 +1155,7 @@
     "accountName": "agent.lucky",
     "accountCode": "iqi7AlLjrP",
     "accountLevel": "Master",
-    "accountPercent": 50
+    "accountPercent": 80
   },
   {
     "accountName": "agmayle",
@@ -1185,6 +1191,36 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "88ta01",
+    "accountCode": "oOEE4K0yWw",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "bk68000",
+    "accountCode": "ly49RZdlEK",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "88tt01m1",
+    "accountCode": "lfojWolurk",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "anh5065001",
+    "accountCode": "ZUUV4VQySa",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "hk45",
+    "accountCode": "2K3dHDmlLN",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
