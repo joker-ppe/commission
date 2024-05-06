@@ -6,7 +6,7 @@
     "master": ""
   },
   {
-    "name": "Csmylinh",
+    "name": "Coca",
     "nickName": "mylinh",
     "super": "locphatx68",
     "master": "ameria68;csml2;csmylinh2"
@@ -76,29 +76,5 @@
     "nickName": "ocean",
     "super": "",
     "master": "agent.d50"
-  },
-  {
-    "name": "csmylinh2",
-    "nickName": "csmylinh2",
-    "super": "",
-    "master": "csmylinh2"
-  },
-  {
-    "name": "BK",
-    "nickName": "bk",
-    "super": "bk68;bk88",
-    "master": "bk89"
-  },
-  {
-    "name": "HKT",
-    "nickName": "huong",
-    "super": "",
-    "master": "ag.huong;masterx68"
-  },
-  {
-    "name": "68",
-    "nickName": "68",
-    "super": "",
-    "master": "agmayle;mafia01;sn03;agent.carwyn;top1102;sn01;sn05;aphat68;ongong68;agent.lucky;ka68"
   }
 ]
