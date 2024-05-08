@@ -1,452 +1,508 @@
 <html>
-  <head>
+<head>
+    <meta charset="UTF-8">
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Montserrat"
+            rel="stylesheet"
     />
     <style>
-      table,
-      th,
-      td,
-      .commission {
-        border: 1px solid black;
-        border-collapse: collapse;
-        text-align: center;
-      }
+        table,
+        th,
+        td,
+        .commission {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
 
-      .commission {
-        text-align: right;
-      }
+        .commission {
+            text-align: right;
+        }
 
-      input {
-        text-align: center;
-      }
+        input {
+            text-align: center;
+        }
 
-      body {
-        font-family: "Montserrat";
-        font-size: 22px;
-        background-image: url("bg.jpg");
-      }
+        body {
+            font-family: "Montserrat";
+            font-size: 22px;
+            background-image: url("bg.jpg");
+        }
 
-      /* Style for input elements */
-      input[type="number"] {
-        width: 100%;
-        border-top: none; /* Remove top border */
-        border-left: none; /* Remove left border */
-        border-right: none; /* Remove right border */
-        font-size: 16px;
-        color: black;
-        font-family: "Montserrat";
-      }
+        /* Style for input elements */
+        input[type="number"] {
+            width: 100%;
+            border-top: none; /* Remove top border */
+            border-left: none; /* Remove left border */
+            border-right: none; /* Remove right border */
+            font-size: 16px;
+            color: black;
+            font-family: "Montserrat";
+        }
 
-      input[type="number"]:focus {
-        outline: none;
-        border-color: #ff5733;
-        box-shadow: 0 0 5px #ff5733;
-      }
+        input[type="number"]:focus {
+            outline: none;
+            border-color: #ff5733;
+            box-shadow: 0 0 5px #ff5733;
+        }
 
-      td {
-        padding: 15px;
-      }
+        td {
+            padding: 15px;
+        }
 
-      th {
-        padding: 10px;
-        font-size: 18px;
-      }
+        th {
+            padding: 10px;
+            font-size: 18px;
+        }
 
-      #totalItem {
-        font-size: 25px;
-      }
+        #totalItem {
+            font-size: 25px;
+        }
 
-      table {
-        margin: 20 auto;
-        background-color: antiquewhite;
-        border-radius: 10px;
-        overflow: hidden;
-      }
+        table {
+            margin: 20px auto;
+            background-color: antiquewhite;
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-      .copyright-notice {
-        position: absolute;
-        bottom: 10px; /* Adjust the distance from the bottom as needed */
-        right: 10px; /* Adjust the distance from the right as needed */
-        font-size: 22px;
-        color: whitesmoke;
-      }
+        .copyright-notice {
+            position: absolute;
+            bottom: 10px; /* Adjust the distance from the bottom as needed */
+            right: 10px; /* Adjust the distance from the right as needed */
+            font-size: 22px;
+            color: whitesmoke;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <table id="table_exchange">
-      <tr>
+<body>
+<table id="table_exchange">
+    <tr>
         <th></th>
         <th>Tiền</th>
         <th>Điểm</th>
         <th>Thưởng</th>
         <th></th>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <td>Đề</td>
         <td>
-          <input id="moneyDe" type="text" value="" />
+            <input id="moneyDe" type="text" value=""/>
         </td>
         <td>
-          <input id="pointDe" type="text" value="" />
+            <input id="pointDe" type="text" value=""/>
         </td>
         <td>
-          <input id="incomeDe" type="text" value="0" disabled />
+            <input id="incomeDe" type="text" value="0" disabled/>
         </td>
         <td>
-          <button id="btnExchangeDe" type="button" value="Đổi">Đổi</button>
+            <button id="btnExchangeDe" type="button" value="Đổi">Đổi</button>
         </td>
-      </tr>
-      <tr>
+    </tr>
+    <tr>
         <td>Lô</td>
         <td>
-          <input id="moneyLo" type="text" value="" />
+            <input id="moneyLo" type="text" value=""/>
         </td>
         <td>
-          <input id="pointLo" type="text" value="" />
+            <input id="pointLo" type="text" value=""/>
         </td>
         <td>
-          <input id="incomeLo" type="text" value="0" disabled />
+            <input id="incomeLo" type="text" value="0" disabled/>
         </td>
 
         <td>
-          <button id="btnExchangeLo" type="button" value="Đổi">Đổi</button>
+            <button id="btnExchangeLo" type="button" value="Đổi">Đổi</button>
         </td>
-      </tr>
-    </table>
+    </tr>
+    <tr>
+        <td>Ba càng</td>
+        <td>
+            <input id="moneyBaCang" type="text" value=""/>
+        </td>
+        <td>
+            <input id="pointBaCang" type="text" value=""/>
+        </td>
+        <td>
+            <input id="incomeBaCang" type="text" value="0" disabled/>
+        </td>
+        <td>
+            <button id="btnExchangeBaCang" type="button" value="Đổi">Đổi</button>
+        </td>
+    </tr>
+</table>
 
-    <table id="table_commission">
-      <tr>
+<table id="table_commission">
+    <tr>
         <th></th>
         <th>Giá đầu</th>
         <th>Giá bán</th>
         <th>Tổng điểm</th>
         <th>Hoa hồng</th>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Đề</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Lô</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Lô Đầu</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Xiên 2</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Xiên 3</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Xiên 4</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Đề Trượt</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Lô Trượt</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Đề Đầu</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Lô Live</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Đề Giải 1</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Đề Đầu Giải 1</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Đề Thần Tài</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr class="item">
+    </tr>
+    <tr class="item">
         <td>Đề Đầu Thần Tài</td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td>
-          <input type="number" value="0" />
+            <input type="number" value="0"/>
         </td>
         <td class="commission"></td>
-      </tr>
-      <tr id="totalItem">
+    </tr>
+    <tr id="totalItem">
         <td colspan="4">Tổng hoa hồng</td>
 
         <td id="total" class="commission"></td>
-      </tr>
-    </table>
+    </tr>
+</table>
 
-    <div class="copyright-notice">&copy; 2023 Joker</div>
+<div class="copyright-notice">&copy; 2023 Joker</div>
 
-    <script>
-      const inputElements = document.querySelectorAll(
+<script>
+    const inputElements = document.querySelectorAll(
         '#table_commission input[type="number"]'
-      );
-      inputElements.forEach(function (inputElement) {
+    );
+    inputElements.forEach(function (inputElement) {
         inputElement.addEventListener("input", function () {
-          // if (inputElement.value === "") {
-          //     inputElement.value = "0";
-          // }
-          calculator();
+            // if (inputElement.value === "") {
+            //     inputElement.value = "0";
+            // }
+            calculator();
         });
-      });
+    });
 
-      const items = document.getElementsByClassName("item");
-      const commissionItems = document.getElementsByClassName("commission");
+    const items = document.getElementsByClassName("item");
+    const commissionItems = document.getElementsByClassName("commission");
 
-      function calculator() {
+    function calculator() {
         for (let i = 0; i < items.length; i++) {
-          const item = items[i];
+            const item = items[i];
 
-          const costOfGoodsSold = parseInt(
-            item.getElementsByTagName("td")[1].children[0].value
-          );
-          const costPrice = parseInt(
-            item.getElementsByTagName("td")[2].children[0].value
-          );
-          const amount = parseInt(
-            item.getElementsByTagName("td")[3].children[0].value
-          );
+            const costOfGoodsSold = parseInt(
+                item.getElementsByTagName("td")[1].children[0].value
+            );
+            const costPrice = parseInt(
+                item.getElementsByTagName("td")[2].children[0].value
+            );
+            const amount = parseInt(
+                item.getElementsByTagName("td")[3].children[0].value
+            );
 
-          const commission = (costPrice - costOfGoodsSold) * amount;
-          if (commission < 0) {
-            commission = 0;
-          }
+            let commission = (costPrice - costOfGoodsSold) * amount;
+            if (commission < 0) {
+                commission = 0;
+            }
 
-          const commissionItem = item.getElementsByTagName("td")[4];
-          commissionItem.textContent = commission;
+            const commissionItem = item.getElementsByTagName("td")[4];
+            commissionItem.textContent = commission;
         }
 
-        var commission = 0;
+        let commission = 0;
         for (let i = 0; i < commissionItems.length - 1; i++) {
-          const item = commissionItems[i];
+            const item = commissionItems[i];
 
-          commission += parseInt(item.innerText);
+            commission += parseInt(item.innerText);
         }
 
         const totalCommissionItem = document.getElementById("total");
         totalCommissionItem.textContent = new Intl.NumberFormat("vi-VN", {
-          style: "currency",
-          currency: "VND",
+            style: "currency",
+            currency: "VND",
         }).format(commission);
-      }
+    }
 
-      calculator();
+    calculator();
 
-      const moneyDe = document.getElementById("moneyDe");
-      const pointDe = document.getElementById("pointDe");
-      const incomeDe = document.getElementById("incomeDe");
-      const moneyLo = document.getElementById("moneyLo");
-      const pointLo = document.getElementById("pointLo");
-      const incomeLo = document.getElementById("incomeLo");
-      const btnExchangeDe = document.getElementById("btnExchangeDe");
-      const btnExchangeLo = document.getElementById("btnExchangeLo");
+    const moneyDe = document.getElementById("moneyDe");
+    const pointDe = document.getElementById("pointDe");
+    const incomeDe = document.getElementById("incomeDe");
 
-      moneyDe.addEventListener("input", function () {
+    const moneyLo = document.getElementById("moneyLo");
+    const pointLo = document.getElementById("pointLo");
+    const incomeLo = document.getElementById("incomeLo");
+
+    const moneyBaCang = document.getElementById("moneyBaCang");
+    const pointBaCang = document.getElementById("pointBaCang");
+    const incomeBaCang = document.getElementById("incomeBaCang");
+
+    const btnExchangeDe = document.getElementById("btnExchangeDe");
+    const btnExchangeLo = document.getElementById("btnExchangeLo");
+    const btnExchangeBaCang = document.getElementById("btnExchangeBaCang");
+
+    moneyDe.addEventListener("input", function () {
         let number = parseInt(event.target.value.replace(/,/g, ""));
         event.target.value = isNaN(number) ? "" : number.toLocaleString();
         pointDe.value = "0";
-      });
-      pointDe.addEventListener("input", function () {
+    });
+    pointDe.addEventListener("input", function () {
         let number = parseInt(event.target.value.replaceAll(",", ""));
         event.target.value = isNaN(number) ? "" : number.toLocaleString();
         moneyDe.value = "0";
-      });
-      moneyLo.addEventListener("input", function () {
+    });
+    moneyLo.addEventListener("input", function () {
         let number = parseInt(event.target.value.replaceAll(",", ""));
         event.target.value = isNaN(number) ? "" : number.toLocaleString();
         pointLo.value = "0";
-      });
-      pointLo.addEventListener("input", function () {
+    });
+    pointLo.addEventListener("input", function () {
         let number = parseInt(event.target.value.replaceAll(",", ""));
         event.target.value = isNaN(number) ? "" : number.toLocaleString();
         moneyLo.value = "0";
-      });
+    });
+    moneyBaCang.addEventListener("input", function () {
+        let number = parseInt(event.target.value.replaceAll(",", ""));
+        event.target.value = isNaN(number) ? "" : number.toLocaleString();
+        pointBaCang.value = "0";
+    });
+    pointBaCang.addEventListener("input", function () {
+        let number = parseInt(event.target.value.replaceAll(",", ""));
+        event.target.value = isNaN(number) ? "" : number.toLocaleString();
+        moneyBaCang.value = "0";
+    });
 
-      btnExchangeDe.addEventListener("click", function () {
+    btnExchangeDe.addEventListener("click", function () {
         if (moneyDe.value !== "0") {
-          pointDe.value = Math.round(
-            parseFloat(moneyDe.value.replaceAll(",", "")) / 705
-          ).toLocaleString();
-          incomeDe.value = Math.round(
-            parseFloat(pointDe.value.replaceAll(",", "")) * 70000 -
-              parseFloat(moneyDe.value.replaceAll(",", ""))
-          ).toLocaleString();
-          return;
+            pointDe.value = Math.round(
+                parseFloat(moneyDe.value.replaceAll(",", "")) / 705
+            ).toLocaleString();
+            incomeDe.value = Math.round(
+                parseFloat(pointDe.value.replaceAll(",", "")) * 70000 -
+                parseFloat(moneyDe.value.replaceAll(",", ""))
+            ).toLocaleString();
+            return;
         }
 
         if (pointDe.value !== "0") {
-          moneyDe.value = (
-            parseFloat(pointDe.value.replaceAll(",", "")) * 705
-          ).toLocaleString();
-          incomeDe.value = Math.round(
-            parseFloat(pointDe.value.replaceAll(",", "")) * 70000 -
-              parseFloat(moneyDe.value.replaceAll(",", ""))
-          ).toLocaleString();
-          return;
+            moneyDe.value = (
+                parseFloat(pointDe.value.replaceAll(",", "")) * 705
+            ).toLocaleString();
+            incomeDe.value = Math.round(
+                parseFloat(pointDe.value.replaceAll(",", "")) * 70000 -
+                parseFloat(moneyDe.value.replaceAll(",", ""))
+            ).toLocaleString();
+            return;
         }
-      });
-      btnExchangeLo.addEventListener("click", function () {
+    });
+    btnExchangeLo.addEventListener("click", function () {
         if (moneyLo.value !== "0") {
-          pointLo.value = Math.round(
-            parseFloat(moneyLo.value.replaceAll(",", "")) / 21680
-          ).toLocaleString();
-          incomeLo.value = Math.round(
-            parseFloat(pointLo.value.replaceAll(",", "")) * 80000 -
-              parseFloat(moneyLo.value.replaceAll(",", ""))
-          ).toLocaleString();
-          return;
+            pointLo.value = Math.round(
+                parseFloat(moneyLo.value.replaceAll(",", "")) / 21680
+            ).toLocaleString();
+            incomeLo.value = Math.round(
+                parseFloat(pointLo.value.replaceAll(",", "")) * 80000 -
+                parseFloat(moneyLo.value.replaceAll(",", ""))
+            ).toLocaleString();
+            return;
         }
 
         if (pointLo.value !== "0") {
-          moneyLo.value = (
-            parseFloat(pointLo.value.replaceAll(",", "")) * 21680
-          ).toLocaleString();
-          incomeLo.value = Math.round(
-            parseFloat(pointLo.value.replaceAll(",", "")) * 80000 -
-              parseFloat(moneyLo.value.replaceAll(",", ""))
-          ).toLocaleString();
-          return;
+            moneyLo.value = (
+                parseFloat(pointLo.value.replaceAll(",", "")) * 21680
+            ).toLocaleString();
+            incomeLo.value = Math.round(
+                parseFloat(pointLo.value.replaceAll(",", "")) * 80000 -
+                parseFloat(moneyLo.value.replaceAll(",", ""))
+            ).toLocaleString();
+            return;
         }
-      });
-    </script>
-  </body>
+    });
+    btnExchangeBaCang.addEventListener("click", function () {
+        if (moneyBaCang.value !== "0") {
+            pointBaCang.value = Math.round(
+                parseFloat(moneyBaCang.value.replaceAll(",", "")) / 660
+            ).toLocaleString();
+            incomeBaCang.value = Math.round(
+                parseFloat(pointBaCang.value.replaceAll(",", "")) * 650000 -
+                parseFloat(moneyBaCang.value.replaceAll(",", ""))
+            ).toLocaleString();
+            return;
+        }
+
+        if (pointBaCang.value !== "0") {
+            moneyBaCang.value = (
+                parseFloat(pointBaCang.value.replaceAll(",", "")) * 660
+            ).toLocaleString();
+            incomeBaCang.value = Math.round(
+                parseFloat(pointBaCang.value.replaceAll(",", "")) * 650000 -
+                parseFloat(moneyBaCang.value.replaceAll(",", ""))
+            ).toLocaleString();
+            return;
+        }
+    });
+</script>
+</body>
 </html>
