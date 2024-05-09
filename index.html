@@ -483,10 +483,10 @@
     btnExchangeBaCang.addEventListener("click", function () {
         if (moneyBaCang.value !== "0") {
             pointBaCang.value = Math.round(
-                parseFloat(moneyBaCang.value.replaceAll(",", "")) / 660
+                parseFloat(moneyBaCang.value.replaceAll(",", "")) / 600
             ).toLocaleString();
             incomeBaCang.value = Math.round(
-                parseFloat(pointBaCang.value.replaceAll(",", "")) * 650000 -
+                parseFloat(pointBaCang.value.replaceAll(",", "")) * 400000 -
                 parseFloat(moneyBaCang.value.replaceAll(",", ""))
             ).toLocaleString();
             return;
@@ -494,10 +494,10 @@
 
         if (pointBaCang.value !== "0") {
             moneyBaCang.value = (
-                parseFloat(pointBaCang.value.replaceAll(",", "")) * 660
+                parseFloat(pointBaCang.value.replaceAll(",", "")) * 600
             ).toLocaleString();
             incomeBaCang.value = Math.round(
-                parseFloat(pointBaCang.value.replaceAll(",", "")) * 650000 -
+                parseFloat(pointBaCang.value.replaceAll(",", "")) * 400000 -
                 parseFloat(moneyBaCang.value.replaceAll(",", ""))
             ).toLocaleString();
             return;
