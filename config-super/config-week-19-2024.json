@@ -76,5 +76,11 @@
     "nickName": "ocean",
     "super": "",
     "master": "agent.d50"
+  },
+  {
+    "name": "BK",
+    "nickName": "BK",
+    "super": "bk88; bk899;bk68",
+    "master": "bk89"
   }
 ]
