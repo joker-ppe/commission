@@ -1,5 +1,11 @@
 [
   {
+    "accountName": "testsuper2",
+    "accountCode": "IM7EBkmrfq",
+    "accountLevel": "Super",
+    "accountPercent": 0
+  },
+  {
     "accountName": "bk899",
     "accountCode": "HxsHviEueW",
     "accountLevel": "Super",
@@ -180,6 +186,24 @@
     "accountPercent": 80
   },
   {
+    "accountName": "ag.hk",
+    "accountCode": "XcYs9ZdI2n",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "testmove2",
+    "accountCode": "kIaeirw68N",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "testmove1",
+    "accountCode": "vnEC8puPXv",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "bk6800",
     "accountCode": "NktsDUq3cD",
     "accountLevel": "Master",
@@ -195,7 +219,7 @@
     "accountName": "csml2",
     "accountCode": "L2Vmfrz8VI",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 20
   },
   {
     "accountName": "88pp01",
@@ -1191,6 +1215,24 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "agent.hongkong",
+    "accountCode": "52b9bYMUGl",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "testmoveagent2",
+    "accountCode": "s10R12W4jZ",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "sn0513",
+    "accountCode": "dNUijHF4Ci",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
@@ -2754,4 +2796,3 @@
     "accountPercent": 80
   }
 ]
-
