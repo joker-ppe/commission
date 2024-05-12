@@ -189,7 +189,7 @@
     "accountName": "ag.hk",
     "accountCode": "XcYs9ZdI2n",
     "accountLevel": "Master",
-    "accountPercent": 0
+    "accountPercent": 80
   },
   {
     "accountName": "testmove2",
@@ -1176,7 +1176,7 @@
     "accountPercent": 20
   },
   {
-    "accountName": "agent.lucky",
+    "accountName": "sn08",
     "accountCode": "iqi7AlLjrP",
     "accountLevel": "Master",
     "accountPercent": 50
