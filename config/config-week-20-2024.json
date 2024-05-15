@@ -186,6 +186,18 @@
     "accountPercent": 80
   },
   {
+    "accountName": "m888",
+    "accountCode": "X9XCeTdfgE",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "galaxy",
+    "accountCode": "Pjpmgu4zDy",
+    "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
     "accountName": "ag.hk",
     "accountCode": "XcYs9ZdI2n",
     "accountLevel": "Master",
@@ -255,7 +267,7 @@
     "accountName": "sn05",
     "accountCode": "v5PHXtruiW",
     "accountLevel": "Master",
-    "accountPercent": 20
+    "accountPercent": 50
   },
   {
     "accountName": "bk88m1",
@@ -321,7 +333,7 @@
     "accountName": "ameria68",
     "accountCode": "N5DncI6r9m",
     "accountLevel": "Master",
-    "accountPercent": 40
+    "accountPercent": null
   },
   {
     "accountName": "tel.ag07a",
@@ -579,7 +591,7 @@
     "accountName": "dv79",
     "accountCode": "OBVbuNBbvM",
     "accountLevel": "Master",
-    "accountPercent": 80
+    "accountPercent": null
   },
   {
     "accountName": "khalifa70",
@@ -597,7 +609,7 @@
     "accountName": "sn6802",
     "accountCode": "GdrAaBahUg",
     "accountLevel": "Master",
-    "accountPercent": 80
+    "accountPercent": 70
   },
   {
     "accountName": "sn6801",
@@ -615,7 +627,7 @@
     "accountName": "sn01",
     "accountCode": "KCARUBN9B3",
     "accountLevel": "Master",
-    "accountPercent": 80
+    "accountPercent": null
   },
   {
     "accountName": "sp.burj01",
@@ -933,7 +945,7 @@
     "accountName": "abubu",
     "accountCode": "kV7Ms7VB9W",
     "accountLevel": "Master",
-    "accountPercent": 80
+    "accountPercent": 0
   },
   {
     "accountName": "csmylinh3",
@@ -1215,6 +1227,18 @@
     "accountName": "joker.master",
     "accountCode": "esMQUG0AIc",
     "accountLevel": "Master",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "m6688",
+    "accountCode": "ItMUiF6BT9",
+    "accountLevel": "Agent",
+    "accountPercent": 0
+  },
+  {
+    "accountName": "galaxy99",
+    "accountCode": "VRHHLQL4Jw",
+    "accountLevel": "Agent",
     "accountPercent": 0
   },
   {
