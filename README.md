@@ -1,1 +1,1 @@
-![joker](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![joker](https://github.com/joker-ppe/commission/blob/main/bot.jpg?raw=true)
