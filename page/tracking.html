@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Winx68</title>
+    <link href='https://fonts.googleapis.com/css?family=Be Vietnam Pro' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro';font-size: 22px;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 25px;
+            font-size: 0.9em;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            height: fit-content;
+        }
+
+        thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 12px 15px;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+
+        table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+
+        .item_number_filter {
+            font-weight: bold;
+            color: blue;
+        }
+
+        #btn {
+            margin: 5px;
+            padding: 10px 20px;
+            background: aliceblue;
+        }
+
+        form {
+            display: flex;
+        }
+
+        #number {
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #type, #date {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #date {
+            width: 15%;
+        }
+
+        #status {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <input type="text" id="number" name="number" autofocus><br>
+    <input type="date" id="date" name="date" placeholder="dd/MM/yyyy"><br>
+    <select id="type" name="type">
+        <option value="0">Đề đầu đặc biệt</option>
+        <option value="1" selected>Đề đuôi đặc biệt</option>
+        <option value="2">Đề đầu giải 1</option>
+        <option value="3">Đề đuôi giải 1</option>
+        <option value="4">Lô đầu</option>
+        <option value="5">Lô đuôi</option>
+    </select><br>
+
+    <input id="btn" type="submit" value="Tìm">
+</form>
+
+<div>
+    <h2 id="status">Nhập dãy 👉 Chọn loại cược 👉 Tìm</h2>
+    <div id="result">
+
+    </div>
+</div>
+
+</body>
+<script>
+    const status = document.querySelector('#status');
+    const result = document.querySelector('#result');
+    const dateInput = document.querySelector('#date');
+    document.querySelector('form').addEventListener('submit', function (e) {
+        status.innerText = 'Đang tiến hành...';
+        result.innerHTML = '';
+
+        e.preventDefault();
+        let number = document.querySelector('#number').value;
+        const selectElement = document.querySelector('#type');
+        let type = selectElement.value;
+
+        const numberList = number.split(',').map(item => item.trim()).filter(item => item !== '');
+        console.log(numberList);
+        if (numberList.length === 0) {
+            status.innerText = 'Vui lòng nhập số';
+            return;
+        }
+
+        dateInput.value = dateInput.value || parseDateFromShowToApi(getCurrentDate());
+        // if (!dateInput.value.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
+        //     status.innerText = 'Vui lòng nhập đúng định dạng ngày: dd/MM/yyyy';
+        //     return;
+        // }
+
+
+        const date = dateInput.value;
+
+        let url = `http://13.212.127.193/report/user?startDate=${date}&endDate=${date}&yesterday=${date}&userName=admin`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                // console.log(data);
+                renderResult(data, type, numberList);
+
+                // console.log(selectElement.text);
+
+                status.innerText = `Kết quả: ${selectElement.selectedOptions[0].text} 👉 ${parseDateFromApiToShow(dateInput.value)}`;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+
+                status.innerText = 'Lỗi';
+            })
+        ;
+    });
+
+    function renderResult(data, type, numberList) {
+
+        const dataBet = data['data_bet'][type];
+
+        if (!dataBet) {
+            status.innerText = 'Không tìm thấy dữ liệu';
+            return;
+        }
+
+        // console.log(dataBet);
+
+        const listNumberFull = dataBet['listNumber'].sort((a, b) => b['point'] - a['point']);
+
+        // console.log(listNumberFull);
+
+        let flexDiv = document.createElement('div');
+        flexDiv.style.display = 'flex';
+        flexDiv.style.justifyContent = 'center';
+
+        const tableResult = document.createElement('table');
+
+        let listNumberFilter = numberList.map(num => {
+            const item = listNumberFull.find(item => item['number'] === num);
+            return item || { number: num, point: 0, amount: 0 };
+        }).sort((a, b) => b['point'] - a['point']);
+
+        const contentTableResult = listNumberFilter.reduce((acc, item, i) => {
+            return acc + `
+        <tr>
+            <td>${i + 1}</td>
+            <td class="item_number_filter">${item['number']}</td>
+            <td>${item['point'].toLocaleString()}</td>
+            <td>${item['amount'].toLocaleString()}</td>
+        </tr>
+    `;
+        }, `
+    <tr>
+         <thead>
+                <th>No.</th>
+                <th>Số</th>
+                <th>Điểm</th>
+                <th>Tiền</th>
+        </thead>
+        <tbody>
+    </tr>
+`);
+
+        tableResult.innerHTML = contentTableResult + '</tbody>';
+
+        // table full
+        const tableFull = document.createElement('table');
+
+        let contentTableFull = `
+        <thead>
+                <th>No.</th>
+                <th>Số</th>
+                <th>Điểm</th>
+                <th>Tiền</th>
+        </thead>
+        <tbody>
+        `;
+
+        for (let i = 0; i < listNumberFull.length; i++) {
+            const item = listNumberFull[i];
+
+            let className = 'normal';
+            if (numberList.includes(item['number'])) {
+                className = 'item_number_filter';
+            }
+
+            contentTableFull += `
+            <tr>
+                <td class="${className}">${i + 1}</td>
+                <td class="${className}">${item['number']}</td>
+                <td class="${className}">${item['point'].toLocaleString()}</td>
+                <td class="${className}">${item['amount'].toLocaleString()}</td>
+            </tr>
+        `;
+        }
+
+
+        tableFull.innerHTML = contentTableFull + '</tbody>';
+        // Append the tables to the flex div
+        flexDiv.appendChild(tableResult);
+        flexDiv.appendChild(tableFull);
+
+// Append the flex div to the result div
+        result.appendChild(flexDiv);
+
+
+
+    }
+
+    function getCurrentDate() {
+        let date = new Date();
+        let day = String(date.getDate()).padStart(2, '0');
+        let month = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    }
+
+    function parseDateFromApiToShow(input) {
+        let parts = input.split('-');
+        return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    }
+
+    function parseDateFromShowToApi(input) {
+        let parts = input.split('/');
+        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    }
+</script>
+</html>

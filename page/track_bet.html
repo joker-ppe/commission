@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Winx68</title>
+    <link href='https://fonts.googleapis.com/css?family=Be Vietnam Pro' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Be Vietnam Pro';
+            font-size: 15px;
+        }
+
+        td,
+        th,
+        tr,
+        table {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        th {
+            background-color: #faebd7;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            table-layout: fixed;
+            width: 100%;
+            word-break: break-word;
+        }
+
+        .win {
+            color: blue;
+        }
+
+        .lose {
+            color: red;
+        }
+
+        .numberTd {
+            width: 30%;
+        }
+
+
+        #btn {
+            margin: 5px;
+            padding: 10px 20px;
+            background: aliceblue;
+        }
+
+        form {
+            display: flex;
+        }
+
+        #username {
+            width: 100%;
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #date {
+            margin: 5px;
+            padding: 5px;
+        }
+
+        #date {
+            width: 15%;
+        }
+
+        #status {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <input type="text" id="username" name="username" placeholder="Tên tài khoản" autofocus><br>
+    <input type="date" id="date" name="date" placeholder="dd/MM/yyyy"><br>
+
+    <input id="btn" type="submit" value="Tra cứu">
+</form>
+
+<div>
+    <h2 id="status">Nhập tên tài khoản 👉 Chọn ngày 👉 Tra cứu</h2>
+    <div id="result">
+
+    </div>
+</div>
+
+</body>
+<script>
+    const status = document.querySelector('#status');
+    const result = document.querySelector('#result');
+    const dateInput = document.querySelector('#date');
+    document.querySelector('form').addEventListener('submit', function (e) {
+        status.innerText = 'Đang tiến hành...';
+        result.innerHTML = '';
+
+        e.preventDefault();
+        let username = document.querySelector('#username').value;
+
+        if (username === '') {
+            status.innerText = 'Vui lòng nhập tên tài khoản';
+            return;
+        }
+
+        dateInput.value = dateInput.value || parseDateFromShowToApi(getCurrentDate());
+        // if (!dateInput.value.match(/^\d{2}\/\d{2}\/\d{4}$/)) {
+        //     status.innerText = 'Vui lòng nhập đúng định dạng ngày: dd/MM/yyyy';
+        //     return;
+        // }
+
+
+        const date = dateInput.value;
+
+        let url = `http://13.212.127.193/report/user/os_bet?endDate=${date}&userName=${username}`;
+        // let url = `http://localhost:3004/report/user/os_bet?endDate=${date}&userName=${username}`;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                renderResult(data);
+
+                // console.log(selectElement.text);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+
+                status.innerText = `Không tìm thấy tài khoản: ${username}`;
+            })
+        ;
+    });
+
+    function renderResult(data) {
+
+        const dataBet = data['data'];
+
+        if (!dataBet) {
+            status.innerText = 'Không tìm thấy dữ liệu';
+            return;
+        }
+
+        if (dataBet.length === 0) {
+            status.innerText = `Tài khoản ${data['full_name']} không có dữ liệu ngày ${parseDateFromApiToShow(dateInput.value)}`;
+            return;
+        }
+
+        let flexDiv = document.createElement('div');
+        flexDiv.style.display = 'flex';
+        flexDiv.style.justifyContent = 'center';
+
+        const tableResult = document.createElement('table');
+
+        let totalPoint = 0;
+        let totalAmount = 0;
+        let totalPayout = 0;
+        let totalProfit = 0;
+
+        let contentTableResult = dataBet.reduce((acc, item, i) => {
+
+            let profitText;
+
+            if (item['status'] === 0) {
+                profitText = '<td style="text-align: left">Chưa có kết quả</td>';
+            } else {
+                if (item['payout'] - item['amount'] > 0) {
+                    profitText = `<td class="win" style="text-align: right">${(item['payout'] - item['amount']).toLocaleString()}</td>`;
+                } else {
+                    profitText = `<td class="lose" style="text-align: right">${(item['payout'] - item['amount']).toLocaleString()}</td>`;
+                }
+            }
+
+            totalPoint += item['point'];
+            totalAmount += item['amount'];
+            totalPayout += item['payout'];
+            totalProfit += item['payout'] - item['amount'];
+
+            return acc + `
+        <tr>
+            <td style="text-align: right; width: 3%;">${i + 1}</td>
+            <td style="text-align: left">
+                ${getGameName(item['bet_type'])}
+                <ul>
+                    <li>
+                        Tổng số: ${item['number'].length}
+                    </li>
+                    <li>
+                        Điểm / số: ~${(item['point'] / item['number'].length).toFixed(0)}
+                    </li>
+                </ul>
+            </td>
+            <td class="numberTd" style="text-align: left">${item['number']}</td>
+            <td style="text-align: right;">
+                ${item['point'].toLocaleString()}
+                <ul style="text-align: left">
+                    <li>
+                    Max 1 số: ${data['config'].find(max => max['bet_type'] === item['bet_type'])['max_point_per_number'].toLocaleString()}
+                    </li>
+                    <li>
+                    Max 1 cược: ${data['config'].find(max => max['bet_type'] === item['bet_type'])['max_point_per_bet'].toLocaleString()}
+                    </li>
+</ul>
+            </td>
+            <td style="text-align: right">${item['amount'].toLocaleString()}</td>
+            <td style="text-align: right">${item['payout'].toLocaleString()}</td>
+            ${profitText}
+        </tr>
+    `;
+        }, `
+    <tr>
+         <thead>
+                <th style="width: 3%;">STT.</th>
+                <th>Thể loại</th>
+                <th class="numberTd">Số</th>
+                <th>Điểm</th>
+                <th>Tiền</th>
+                <th>Trả thưởng</th>
+                <th>Lợi nhuận</th>
+        </thead>
+        <tbody>
+    </tr>
+`);
+        let profitText;
+        let profitTextStatus;
+        if (totalProfit > 0) {
+            profitText = `<td class="win" style="text-align: right; font-size: 25px;">${totalProfit.toLocaleString()}</td>`;
+            profitTextStatus = `<span class="win" style="text-align: right; font-size: 25px;">${totalProfit.toLocaleString()}</span>`;
+        } else {
+            profitText = `<td class="lose" style="text-align: right; font-size: 25px;">${totalProfit.toLocaleString()}</td>`;
+            profitTextStatus = `<span class="lose" style="text-align: right; font-size: 25px;">${totalProfit.toLocaleString()}</span>`;
+        }
+
+        contentTableResult += `
+                    <tr>
+            <td colspan="3" style="font-size: 25px; font-weight: bold; text-align: center">Tổng</td>
+            <td style="text-align: right;font-size: 25px; width: 10%">${totalPoint.toLocaleString()}</td>
+            <td style="text-align: right;font-size: 25px;">${totalAmount.toLocaleString()}</td>
+            <td style="text-align: right;font-size: 25px;">${totalPayout.toLocaleString()}</td>
+            ${profitText}
+        </tr>
+        `
+
+        tableResult.innerHTML = contentTableResult + '</tbody>';
+
+        // Append the tables to the flex div
+        flexDiv.appendChild(tableResult);
+
+        // Append the flex div to the result div
+        result.appendChild(flexDiv);
+
+        status.innerHTML = `Kết quả: <span style="color: orangered; font-size: 25px;">${data['full_name']}</span> ngày ${parseDateFromApiToShow(dateInput.value)} 👉 ${profitTextStatus}`;
+    }
+
+    function getCurrentDate() {
+        let date = new Date();
+        let day = String(date.getDate()).padStart(2, '0');
+        let month = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+        let year = date.getFullYear();
+        return `${day}/${month}/${year}`;
+    }
+
+    function getGameName(type) {
+        switch (type) {
+            case 0:
+                return 'Đề đầu';
+            case 1:
+                return 'Đề đuôi';
+            case 2:
+                return 'Đề đầu giải 1';
+            case 3:
+                return 'Đề đuôi giải 1';
+            case 4:
+                return 'Lô đầu';
+            case 5:
+                return 'Lô đuôi';
+            case 6:
+                return 'Xiên 2';
+            case 7:
+                return 'Xiên 3';
+            case 8:
+                return 'Xiên 4';
+            case 9:
+                return 'Ba càng';
+            default:
+                return 'none';
+        }
+    }
+
+    function parseDateFromApiToShow(input) {
+        let parts = input.split('-');
+        return `${parts[2]}/${parts[1]}/${parts[0]}`;
+    }
+
+    function parseDateFromShowToApi(input) {
+        let parts = input.split('/');
+        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    }
+</script>
+</html>
