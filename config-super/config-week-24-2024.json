@@ -186,6 +186,12 @@
     "master": "bk91;bk89"
   },
   {
+    "name": "aD",
+    "nickName": "bk91",
+    "super": "",
+    "master": "bk91"
+  },
+  {
     "name": "Kitty",
     "nickName": "kitty",
     "super": "bk899;",
@@ -204,4 +210,3 @@
     "master": "sn6801;sn6802;sn6803"
   }
 ]
-
