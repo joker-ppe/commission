@@ -87,7 +87,7 @@
     "name": "Kitty",
     "nickName": "kitty",
     "super": "bk899;",
-    "master": "aphat68;sn05;abubu;sn01;sn03;sn02;sn08;dv79;sn6801;sn6802;sn6803;ap68;bk90;bk91"
+    "master": "aphat68;sn05;abubu;sn01;sn03;sn02;sn08;dv79;sn6801;sn6802;sn6803;ap68;bk90;bk91;bk92"
   },
   {
     "name": "A",
@@ -189,7 +189,7 @@
     "name": "bk91",
     "nickName": "bk91",
     "super": "",
-    "master": "bk91"
+    "master": "bk91;bk92"
   },
   {
     "name": "Kitty",
