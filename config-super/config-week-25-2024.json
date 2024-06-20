@@ -30,22 +30,10 @@
     "master": "xl6868"
   },
   {
-    "name": "KA68",
-    "nickName": "ka",
-    "super": "",
-    "master": "ka68"
-  },
-  {
     "name": "HK",
     "nickName": "hanhkeo",
     "super": "",
     "master": "agent.hanhkeo"
-  },
-  {
-    "name": "LV",
-    "nickName": "lv",
-    "super": "",
-    "master": "agent.lv"
   },
   {
     "name": "aphat",
@@ -58,12 +46,6 @@
     "nickName": "saga",
     "super": "",
     "master": "saga"
-  },
-  {
-    "name": "BK",
-    "nickName": "bk",
-    "super": "",
-    "master": "bk91;bk89"
   },
   {
     "name": "Kitty",
