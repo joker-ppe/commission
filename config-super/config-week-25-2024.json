@@ -1,5 +1,11 @@
 [
   {
+    "name": "Coca",
+    "nickName": "mylinh",
+    "super": "locphatx68",
+    "master": "ameria68;csml2;csmylinh2;ameria86"
+  },
+  {
     "name": "RRV6868",
     "nickName": "rrv",
     "super": "",
@@ -9,7 +15,7 @@
     "name": "Hni",
     "nickName": "hn",
     "super": "sp.hn1;sp.hn2;dd2080",
-    "master": "ag.hn516;ag.hn510;ag.hn619;agent.hn501;ag.hn510;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500;ag.hn512;ag.hn513;ag.hn514;ag.hn515;ag.hn518"
+    "master": "ag.hn516;ag.hn510;ag.hn619;agent.hn501;ag.hn510;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500;ag.hn512;ag.hn513;ag.hn514;ag.hn515"
   },
   {
     "name": "TOP1102",
@@ -30,10 +36,22 @@
     "master": "xl6868"
   },
   {
+    "name": "KA68",
+    "nickName": "ka",
+    "super": "",
+    "master": "ka68"
+  },
+  {
     "name": "HK",
     "nickName": "hanhkeo",
     "super": "",
     "master": "agent.hanhkeo"
+  },
+  {
+    "name": "LV",
+    "nickName": "lv",
+    "super": "",
+    "master": "agent.lv"
   },
   {
     "name": "aphat",
@@ -48,36 +66,6 @@
     "master": "saga"
   },
   {
-    "name": "Kitty",
-    "nickName": "kitty",
-    "super": "bk899;",
-    "master": "aphat68;sn05;abubu;sn01;sn03;sn02;sn08;dv79;sn6801;sn6802;sn6803;ap68;bk90;bk91;bk92"
-  },
-  {
-    "name": "THD",
-    "nickName": "thd",
-    "super": "thantai;usa68;berlin68",
-    "master": "korea79"
-  },
-  {
-    "name": "Coca",
-    "nickName": "mylinh",
-    "super": "locphatx68",
-    "master": "ameria68;csml2;csmylinh2;ameria86"
-  },
-  {
-    "name": "KA68",
-    "nickName": "ka",
-    "super": "",
-    "master": "ka68"
-  },
-  {
-    "name": "LV",
-    "nickName": "lv",
-    "super": "",
-    "master": "agent.lv"
-  },
-  {
     "name": "Ocean",
     "nickName": "ocean",
     "super": "",
@@ -90,6 +78,24 @@
     "master": "bk91;bk89"
   },
   {
+    "name": "Kitty",
+    "nickName": "kitty",
+    "super": "bk899;",
+    "master": "aphat68;sn05;abubu;sn01;sn03;sn02;sn08;dv79;sn6801;sn6802;sn6803;ap68;bk90;bk91;bk92"
+  },
+  {
+    "name": "SUPERKC",
+    "nickName": "superkc",
+    "super": "",
+    "master": "sn6801;sn6802;sn6803"
+  },
+  {
+    "name": "THD",
+    "nickName": "thd",
+    "super": "thantai;usa68;berlin68",
+    "master": "korea79"
+  },
+  {
     "name": "bk91",
     "nickName": "bk91",
     "super": "",
@@ -99,12 +105,6 @@
     "name": "A",
     "nickName": "andy",
     "super": "sp.hn1;sp.hn2;thantai;usa68;locphatx68;bk899",
-    "master": "dubai9999;hx9999;ameria86;ag.hn516;ag.hn512;ag.hn510;ag.hn619;agent.hn501;ag.hn510;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500;ameria68;csml2;csmylinh2;ka68;agent.hanhkeo;agent.lv;agent.d50;mafia01;ag.hk;ag.hk01;top1102;masterx68;galaxy;et88;agent.carwyn;bk91;bk92;sn6801;sn6802;sn6803;dv79;sn01;hi68"
-  },
-  {
-    "name": "SUPERKC",
-    "nickName": "superkc",
-    "super": "",
-    "master": "sn6801;sn6802;sn6803"
+    "master": "dubai9999;hx9999;ameria86;ag.hn516;ag.hn512;ag.hn510;ag.hn619;agent.hn501;ag.hn510;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500;ameria68;csml2;csmylinh2;ka68;agent.hanhkeo;agent.lv;agent.d50;mafia01;ag.hk;ag.hk01;top1102;masterx68;galaxy;et88;agent.carwyn;bk91;bk92;sn6801;sn6802;sn6803;dv79;sn01"
   }
 ]
