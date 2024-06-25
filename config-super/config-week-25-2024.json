@@ -102,6 +102,12 @@
     "master": "bk91;bk92"
   },
   {
+    "name": "aghk",
+    "nickName": "aghk",
+    "super": "",
+    "master": "ag.hk;ag.hk01"
+  },
+  {
     "name": "A",
     "nickName": "andy",
     "super": "sp.hn1;sp.hn2;thantai;usa68;locphatx68;bk899",
