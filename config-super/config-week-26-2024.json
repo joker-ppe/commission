@@ -15,7 +15,7 @@
     "name": "Hni",
     "nickName": "hn",
     "super": "sp.hn1;sp.hn2",
-    "master": "ag.hn516;ag.hn510;ag.hn619;agent.hn501;ag.hn510;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500;ag.hn512;ag.hn513;ag.hn514;ag.hn515"
+    "master": "ag.hn516;ag.hn510;ag.hn619;agent.hn501;ag.hn510;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500;ag.hn512;ag.hn513;ag.hn514;ag.hn515;ag.hn518"
   },
   {
     "name": "TOP1102",
@@ -57,7 +57,7 @@
     "name": "aphat",
     "nickName": "aphat",
     "super": "",
-    "master": "aphat68;sn01;sn03;ap68"
+    "master": "sn01;sn05"
   },
   {
     "name": "Saga",
@@ -111,7 +111,7 @@
     "name": "A",
     "nickName": "andy",
     "super": "sp.hn1;sp.hn2;thantai;usa68;berlin68;",
-    "master": "ameria68;csml2;csmylinh2;ameria86;gah8989;csml3;ag.hn516;ag.hn510;ag.hn619;agent.hn501;ag.hn510;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500;ag.hn512;ag.hn513;ag.hn514;ag.hn515;sn05;coto68;sn01;dv79;sn6801;sn6802;sn6803;bk91;bk92;bk89;ag.hk;ag.hk01;agent.d50;agmayle;masterx68;agent.hanhkeo;agent.lv;ka68;et88;hx9999;dubai9999;vb789;telmaster;agent.carwyn"
+    "master": "ameria68;csml2;csmylinh2;ameria86;gah8989;csml3;ag.hn516;ag.hn510;ag.hn619;agent.hn501;ag.hn510;agent.hn502;agent.hn503;agent.hn506;agent.hn508;agent.hn509;agent.hn511;ag.hn500;ag.hn512;ag.hn513;ag.hn514;ag.hn515;ag.hn518;sn05;coto68;sn01;dv79;sn6801;sn6802;sn6803;bk91;bk92;bk89;ag.hk;ag.hk01;agent.d50;agmayle;masterx68;agent.hanhkeo;agent.lv;ka68;et88;hx9999;dubai9999;vb789;telmaster;agent.carwyn;agent.carwyn01"
   },
   {
     "name": "x",
