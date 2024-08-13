@@ -139,8 +139,15 @@
                 text_result += '<br>';
                 text_result += `Tổng ${listResult.length} số: ` + listResult.join(',');
 
-                // Display the listResult in the listResult div
-                document.getElementById('listResult').innerHTML = text_result;
+                // Create a table to display the duplicate numbers
+                let duplicateTableHtml = '<table border="1"><tr><th>Duplicate Number</th><th>Count</th></tr>';
+                duplicateNumbers.forEach(num => {
+                    duplicateTableHtml += `<tr><td>${num}</td><td>${countOccurrences[num]}</td></tr>`;
+                });
+                duplicateTableHtml += '</table>';
+
+                // Display the listResult and duplicate table in the listResult div
+                document.getElementById('listResult').innerHTML = text_result + duplicateTableHtml;
 
             } catch (error) {
                 console.error('There has been a problem with your fetch operation:', error);
