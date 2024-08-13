@@ -134,15 +134,16 @@
                 // Filter out duplicate numbers
                 const uniqueNumbers = [...new Set(listResult)];
 
-                let text_result = `Tổng ${duplicateNumbers.length} số trùng: ` + duplicateNumbers.join(',') + '<br>';
+                let text_result = `Tổng ${duplicateNumbers.length} số trùng: ` + duplicateNumbers.join(',') + '<br><br>';
                 text_result += `Tổng ${uniqueNumbers.length} số không trùng: ` + uniqueNumbers.join(',');
-                text_result += '<br>';
+                text_result += '<br><br>';
                 text_result += `Tổng ${listResult.length} số: ` + listResult.join(',');
 
                 // Create a table to display the duplicate numbers
-                let duplicateTableHtml = '<table border="1"><tr><th>Duplicate Number</th><th>Count</th></tr>';
+                let j = 1;
+                let duplicateTableHtml = '<table border="1"><tr><th>No.</th><th>Duplicate Number</th><th>Count</th></tr>';
                 duplicateNumbers.forEach(num => {
-                    duplicateTableHtml += `<tr><td>${num}</td><td>${countOccurrences[num]}</td></tr>`;
+                    duplicateTableHtml += `<tr><td>${j++}</td><td>${num}</td><td>${countOccurrences[num]}</td></tr>`;
                 });
                 duplicateTableHtml += '</table>';
 
