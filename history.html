@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch sử</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
+        table th, table td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        table th {
+            background-color: #f2f2f2;
+        }
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .container > div {
+            width: 48%;
+        }
+        .form-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        #daysForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        #daysForm label, #daysForm input, #daysForm button {
+            margin: 10px 0;
+        }
+        #daysForm input, #daysForm button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #daysForm button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #daysForm button:hover {
+            background-color: #45a049;
+        }
+        #listResult {
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="daysForm">
+            <label for="days">Nhập số lượng ngày:</label>
+            <input type="number" id="days" name="days" min="1" value="30">
+            <button type="submit">Lấy dữ liệu</button>
+        </form>
+    </div>
+    <div class="container">
+        <div id="content"></div>
+        <div id="listResult"></div>
+    </div>
+    <script>
+         document.getElementById('daysForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const days = document.getElementById('days').value;
+            fetchData(days);
+        });
+
+        async function fetchData(days) {
+            try {
+                const apiUrl = `https://api.mhzppe.com/agent/history?days=${days}`;
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                const data = await response.json();
+                
+                // Assuming the API returns an object with a property 't' containing the results
+                const results = data.t.issueList; // Adjust this based on the actual structure of the API response
+                
+                const listResult = [];
+
+                // Create a table to display the results
+                let tableHtml = '<table border="1"><tr><th>No.</th><th>Date</th><th>Result</th><th>Last 2 Digits</th></tr>';
+                let i = 1;
+                results.forEach(result => {
+                    const resultNum = result.openNum.replaceAll(',','');
+                    const lastTwoDigits = resultNum.slice(-2);
+                    tableHtml += `<tr><td>${i++}</td><td>${result.turnNum}</td><td>${resultNum}</td><td>${lastTwoDigits}</td></tr>`;
+                    listResult.push(lastTwoDigits);
+                });
+                tableHtml += '</table>';
+                
+                // Display the table in the content div
+                document.getElementById('content').innerHTML = tableHtml;
+
+
+                // Count occurrences of each number
+                const countOccurrences = listResult.reduce((acc, num) => {
+                    acc[num] = (acc[num] || 0) + 1;
+                    return acc;
+                }, {});
+
+                // Filter out duplicate numbers
+                const duplicateNumbers = Object.keys(countOccurrences).filter(num => countOccurrences[num] > 1);
+
+                // Filter out duplicate numbers
+                const uniqueNumbers = [...new Set(listResult)];
+
+                let text_result = `Tổng ${duplicateNumbers.length} số trùng: ` + duplicateNumbers.join(',') + '<br>';
+                text_result += `Tổng ${uniqueNumbers.length} số không trùng: ` + uniqueNumbers.join(',');
+
+                // Display the listResult in the listResult div
+                document.getElementById('listResult').innerHTML = text_result;
+
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+    </script>
+</body>
+</html>
