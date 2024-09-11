@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Parse Xien với Tổng Amount</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        h2, h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #listLog, .parseResult {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        #listLog li, .parseResult li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .parseResult li {
+            display: flex;
+            justify-content: space-between;
+        }
+        .number {
+            font-weight: bold;
+        }
+        .amount {
+            color: #4CAF50;
+        }
+        .index {
+            font-weight: bold;
+            color: red;
+        }
+        .group {
+            margin-bottom: 20px;
+        }
+        .total {
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: right;
+            color: #4CAF50;
+        }
+        .grand-total {
+            font-size: 1.2em;
+            color: #4CAF50;
+            border-top: 2px solid #4CAF50;
+            padding-top: 10px;
+        }
+        #sendButton {
+            background-color: #008CBA;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 15px;
+            display: none;
+        }
+        #sendButton:hover {
+            background-color: #007B9A;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Nhập tin:</h2>
+    <textarea id="textInput" rows="6"></textarea>
+    <button onclick="parseText()">Parse</button>
+</div>
+
+<div class="container">
+    <h2>Kết quả Parse:</h2>
+    <div id="parseResult"></div>
+    <button id="sendButton" onclick="sendData()" style="display: none;">Send</button>
+</div>
+
+<script>
+    let dataSend = "";
+    function parseText() {
+        const text = document.getElementById("textInput").value;
+        let textParse = text.replaceAll("Xien:", "").replaceAll("\n", "");
+        textParse = textParse.split(":");
+        console.log(textParse);
+        const indexOfLog = textParse[0].trim();
+        let log = textParse[1].trim();
+        console.log(indexOfLog);
+        console.log(log);
+
+        log = log.split(" ");
+        console.log(log);
+
+        const listLog = [];
+        for (let i = 0; i < log.length; i++) {
+            if (log[i] !== "") {
+                let logItem = log[i].split("x");
+                const item = {
+                    number: logItem[0].split(","),
+                    amount: parseInt(logItem[1].replaceAll("n", "")),
+                }
+                listLog.push(item);
+            }
+        }
+        console.log(listLog);
+
+        // Phân loại kết quả
+        const groups = {
+            2: [],
+            3: [],
+            4: []
+        };
+
+        listLog.forEach(item => {
+            const length = item.number.length;
+            if (length >= 2 && length <= 4) {
+                groups[length].push(item);
+            }
+        });
+
+        // Hiển thị kết quả parse theo nhóm
+        const parseResult = document.getElementById("parseResult");
+        parseResult.innerHTML = "";
+
+        const indexOfLogDiv = document.createElement("h2");
+        indexOfLogDiv.className = "index";
+        indexOfLogDiv.textContent = `${indexOfLog}`;
+
+        parseResult.appendChild(indexOfLogDiv);
+
+        let grandTotal = 0;
+
+        for (let i = 2; i <= 4; i++) {
+            if (groups[i].length > 0) {
+                const groupDiv = document.createElement("div");
+                groupDiv.className = "group";
+                groupDiv.innerHTML = `<h3>Xiên ${i}:</h3>`;
+                const ul = document.createElement("ul");
+                ul.className = "parseResult";
+
+                let groupTotal = 0;
+
+                groups[i].forEach(item => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `<span class="number">${item.number.join(", ")}</span> <span class="amount">${item.amount.toLocaleString()}</span>`;
+                    ul.appendChild(li);
+                    groupTotal += item.amount;
+                });
+
+                groupDiv.appendChild(ul);
+
+                const totalDiv = document.createElement("div");
+                totalDiv.className = "total";
+                totalDiv.textContent = `Tổng xiên ${i}: ${groupTotal.toLocaleString()}`;
+                groupDiv.appendChild(totalDiv);
+
+                parseResult.appendChild(groupDiv);
+
+                grandTotal += groupTotal;
+            }
+        }
+
+        // Hiển thị tổng cộng
+        const grandTotalDiv = document.createElement("div");
+        grandTotalDiv.className = "total grand-total";
+        grandTotalDiv.textContent = `Tổng cộng: ${grandTotal.toLocaleString()}`;
+        parseResult.appendChild(grandTotalDiv);
+
+        // parse data
+        dataSend = {
+            "date": getCurrentDate(),
+            "indexOfLog": indexOfLog,
+            "log": listLog
+        };
+
+        // Xóa nội dung trong textarea
+        // document.getElementById("textInput").value = "";
+        // Show the send button after successful parse
+        document.getElementById("sendButton").style.display = "block";
+    }
+
+    function getCurrentDate() {
+        const date = new Date();
+        const day = String(date.getDate()).padStart(1, '0');
+        const month = String(date.getMonth() + 1).padStart(1, '0'); // Months are 0-based in JavaScript
+        const year = date.getFullYear();
+
+        return `${day}-${month}-${year}`;
+        // return '15-3-2024';
+    }
+
+    async function sendData() {
+        try {
+            const response = await fetch('http://13.212.127.193/report/addXienLog', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dataSend)
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('Success:', result);
+                alert('Data sent successfully!');
+            } else {
+                console.error('Error:', response.statusText);
+                alert('Failed to send data. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('An error occurred while sending data. Please try again.');
+        }
+    }
+</script>
+</body>
+</html>
