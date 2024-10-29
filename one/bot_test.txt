@@ -1,0 +1,3 @@
+const script = document.createElement('script');
+script.src = 'https://joker-ppe.github.io/commission/one/scriptBet_one789_ver_test.js';
+document.head.appendChild(script);
