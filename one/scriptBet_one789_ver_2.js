@@ -1,4 +1,3 @@
-
 // 10.000.000
 let currentMoney = 0;
 
@@ -232,7 +231,7 @@ async function cuocBan1() {
         }
         btnChip.click();
 
-        await sleep(500);
+        const sleepTag1 = await sleep(500);
 
         const evenBtn = document.getElementsByClassName("even")[0];
         const oddBtn = document.getElementsByClassName("odd")[0];
@@ -254,18 +253,18 @@ async function cuocBan1() {
 
         for (let i = 0; i < tyLeCuocBan1; i++) {
             btn.click();
-            await sleep(200);
+            const sleepTag = await sleep(200);
         }
 
         console.table(logData);
 
-        await sleep(500);
+        const sleepTag2 = await sleep(500);
         const btnBet = document.getElementsByClassName(
             "md-btn-betting"
         )[0];
         btnBet.click();
 
-        await sleep(500);
+        const sleepTag3 = await sleep(500);
         // var btnReturn = document.getElementsByClassName("el-button el-button--primary")[4];
         // btnReturn.click();
 
@@ -354,7 +353,7 @@ async function cuocBan2() {
         }
         btnChip.click();
 
-        await sleep(500);
+        const sleepTag1 = await sleep(500);
 
         const evenBtn = document.getElementsByClassName("even")[2];
         const oddBtn = document.getElementsByClassName("odd")[2];
@@ -376,18 +375,18 @@ async function cuocBan2() {
 
         for (let i = 0; i < tyLeCuocBan2; i++) {
             btn.click();
-            await sleep(200);
+            const sleepTag = await sleep(200);
         }
 
         console.table(logData);
 
-        await sleep(500);
+        const sleepTag2 = await sleep(500);
         const btnBet = document.getElementsByClassName(
             "md-btn-betting"
         )[1];
         btnBet.click();
 
-        await sleep(500);
+        const sleepTag3 = await sleep(500);
         // var btnReturn = document.getElementsByClassName("el-button el-button--primary")[4];
         // btnReturn.click();
 
@@ -471,23 +470,23 @@ async function checkProfitVirtualBan1(newValue) {
         threadHoldUpdateBan1 -= (threadHold * tyLeCuocBan1FromServer);
 
         if (chuoiCauBan1 !== -2) {
-            await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
+            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
         }
     }
 
     if (currentProfitVirtualBan1 >= threadHoldStopBan1) {
 
-        await notifyTelegram(`Bàn 1 đã đạt ngưỡng dương: ${threadHoldStopBan1.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
-        await sendMsg(CODE_ROUND + "betBan1", 0);
+        const noti1 = await notifyTelegram(`Bàn 1 đã đạt ngưỡng dương: ${threadHoldStopBan1.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+        const sendMsgTag = await sendMsg(CODE_ROUND + "betBan1", 0);
         threadHoldStopBan1 += threadHold;
-        await notifyTelegram(`Ngưỡng chốt lời mới bàn 1 tăng thành: ${threadHoldStopBan1.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+        const noti2 = await notifyTelegram(`Ngưỡng chốt lời mới bàn 1 tăng thành: ${threadHoldStopBan1.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
     }
 
     if (currentProfitVirtualBan1 <= ((-2) * threadHoldStopBan1)) {
 
-        // await notifyTelegram(`Bàn 1 đã đạt ngưỡng âm: ${((-2) * threadHoldStopBan1).toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
-        // // await sendMsg(CODE_ROUND + "betBan1", 0);
-        // await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
+        // const noti = await notifyTelegram(`Bàn 1 đã đạt ngưỡng âm: ${((-2) * threadHoldStopBan1).toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+        // // const sendMsgTag = await sendMsg(CODE_ROUND + "betBan1", 0);
+        // const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
         // threadHoldStopBan1 += takeProfitReal;
     }
 
@@ -506,7 +505,7 @@ async function checkProfitVirtualBan1(newValue) {
         minProfitVirtualBan1 = currentProfitVirtualBan1;
 
         if (chuoiCauBan1 !== -2) {
-            await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
+            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
         }
     }
 
@@ -533,7 +532,7 @@ async function checkProfitVirtualBan1(newValue) {
             tyLeNhanBan1 = 1;
 
             for (let i = 0; i < 10; i++) {
-                await sendMsg(CODE_ROUND + "Ban1", i);
+                const sendMsgTag = await sendMsg(CODE_ROUND + "Ban1", i);
             }
 
             resetBan1();
@@ -547,7 +546,7 @@ async function checkProfitVirtualBan1(newValue) {
     //         tyLeNhanBan1 = 1;
     //         // isStartBan1 = false;
     //         for (let i = 0; i < 10; i++) {
-    //             await sendMsg(CODE_ROUND + "Ban1", i);
+    //             const sendMsgTag = await sendMsg(CODE_ROUND + "Ban1", i);
     //         }
     //         resetBan1();
     //     }
@@ -595,10 +594,10 @@ async function checkProfitVirtualBan1(newValue) {
         beforeProfitVirtualBan1 = currentProfitVirtualBan1;
     }
 
-    await sendMsg(CODE_ROUND + "Ban1", currentProfitVirtualBan1);
+    const sendMsgTag = await sendMsg(CODE_ROUND + "Ban1", currentProfitVirtualBan1);
 
     if (isReadyBan1) {
-        await sendMsg(CODE_ROUND + "cauBan1", currentProfitVirtualBan1);
+        const sendMsgTag = await sendMsg(CODE_ROUND + "cauBan1", currentProfitVirtualBan1);
     }
 
     allowBetBan1 = true;
@@ -649,24 +648,24 @@ async function checkProfitVirtualBan2(newValue) {
         threadHoldUpdateBan2 -= (threadHold * tyLeCuocBan2FromServer);
 
         if (chuoiCauBan2 !== -2) {
-            await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
+            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
         }
     }
 
     if (currentProfitVirtualBan2 >= threadHoldStopBan2) {
-        await notifyTelegram(`Bàn 2 đã đạt ngưỡng dương: ${threadHoldStopBan2.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+        const noti1 = await notifyTelegram(`Bàn 2 đã đạt ngưỡng dương: ${threadHoldStopBan2.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
 
-        await sendMsg(CODE_ROUND + "betBan2", 0);
+        const sendMsgTag = await sendMsg(CODE_ROUND + "betBan2", 0);
         //
         threadHoldStopBan2 += threadHold;
-        await notifyTelegram(`Ngưỡng chốt lời mới bàn 2 tăng thành: ${threadHoldStopBan2.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+        const noti2 = await notifyTelegram(`Ngưỡng chốt lời mới bàn 2 tăng thành: ${threadHoldStopBan2.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
     }
 
     if (currentProfitVirtualBan2 <= ((-2) * threadHoldStopBan2)) {
 
-        // await notifyTelegram(`Bàn 2 đã đạt ngưỡng âm: ${((-2) * threadHoldStopBan2).toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
-        // // await sendMsg(CODE_ROUND + "betBan2", 0);
-        // await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
+        // const noti = await notifyTelegram(`Bàn 2 đã đạt ngưỡng âm: ${((-2) * threadHoldStopBan2).toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+        // // const sendMsgTag = await sendMsg(CODE_ROUND + "betBan2", 0);
+        // const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
         // threadHoldStopBan2 += takeProfitReal;
     }
 
@@ -685,7 +684,7 @@ async function checkProfitVirtualBan2(newValue) {
         minProfitVirtualBan2 = currentProfitVirtualBan2;
 
         if (chuoiCauBan2 !== -2) {
-            await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
+            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
         }
     }
 
@@ -713,7 +712,7 @@ async function checkProfitVirtualBan2(newValue) {
             tyLeNhanBan2 = 1;
 
             for (let i = 0; i < 10; i++) {
-                await sendMsg(CODE_ROUND + "Ban2", i);
+                const sendMsgTag = await sendMsg(CODE_ROUND + "Ban2", i);
             }
 
             resetBan2();
@@ -727,7 +726,7 @@ async function checkProfitVirtualBan2(newValue) {
     //         tyLeNhanBan2 = 1;
     //         // isStartBan2 = false;
     //         for (let i = 0; i < 10; i++) {
-    //             await sendMsg(CODE_ROUND + "Ban2", i);
+    //             const sendMsgTag = await sendMsg(CODE_ROUND + "Ban2", i);
     //         }
     //         resetBan2();
     //     }
@@ -776,10 +775,10 @@ async function checkProfitVirtualBan2(newValue) {
         beforeProfitVirtualBan2 = currentProfitVirtualBan2;
     }
 
-    await sendMsg(CODE_ROUND + "Ban2", currentProfitVirtualBan2);
+    const sendMsgTag = await sendMsg(CODE_ROUND + "Ban2", currentProfitVirtualBan2);
 
     if (isReadyBan2) {
-        await sendMsg(CODE_ROUND + "cauBan2", currentProfitVirtualBan2);
+        const sendMsgTag = await sendMsg(CODE_ROUND + "cauBan2", currentProfitVirtualBan2);
     }
 
     allowBetBan2 = true;
@@ -796,11 +795,11 @@ async function betBan1() {
     const randomNum = getRandomInt(1, 3);
     console.log("Delay: " + randomNum + "s");
 
-    await sleep(randomNum * 1000);
+    const sleepTag1 = await sleep(randomNum * 1000);
 
-    await cuocBan1();
+    const result = await cuocBan1();
 
-    await sleep(500);
+    const sleepTag2 = await sleep(500);
 
     // await cuocBan2(total);
 
@@ -821,11 +820,11 @@ async function betBan2() {
     const randomNum = getRandomInt(1, 3);
     console.log("Delay: " + randomNum + "s");
 
-    await sleep(randomNum * 1000);
+    const sleepTag1 = await sleep(randomNum * 1000);
 
-    await cuocBan2();
+    const result = await cuocBan2();
 
-    await sleep(500);
+    const sleepTag2 = await sleep(500);
 
     // await cuocBan2(total);
 
@@ -883,7 +882,7 @@ async function getTyLeCuocFromServer() {
                 'font-weight:normal; font-size:20px;color:green; background-color:#FFE5B4');
 
             if (!isTest) {
-                await notifyTelegram(`Thay đổi tỷ lệ cược bàn 1: ${(tyLeCuocBan1FromServer * 100_000).toLocaleString()} => ${(value * 100_000).toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Thay đổi tỷ lệ cược bàn 1: ${(tyLeCuocBan1FromServer * 100_000).toLocaleString()} => ${(value * 100_000).toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
 
             tyLeCuocBan1FromServer = value;
@@ -900,7 +899,7 @@ async function getTyLeCuocFromServer() {
                 'font-weight:normal; font-size:20px;color:blue; background-color:#FFE5B4');
 
             if (!isTest) {
-                await notifyTelegram(`Thay đổi tỷ lệ cược bàn 2: ${(tyLeCuocBan2FromServer * 100_000).toLocaleString()} => ${(value * 100_000).toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Thay đổi tỷ lệ cược bàn 2: ${(tyLeCuocBan2FromServer * 100_000).toLocaleString()} => ${(value * 100_000).toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
 
             tyLeCuocBan2FromServer = value;
@@ -919,7 +918,7 @@ async function getTyLeCuocFromServer() {
                 'font-weight:normal; font-size:20px;color:green; background-color:#FFE5B4');
 
             if (!isTest) {
-                await notifyTelegram(`Thay đổi công thức cược bàn 1: ${isShortTermBan1 ? "Cầu ngắn" : "Cầu dài"} => ${value ? "Cầu ngắn" : "Cầu dài"}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Thay đổi công thức cược bàn 1: ${isShortTermBan1 ? "Cầu ngắn" : "Cầu dài"} => ${value ? "Cầu ngắn" : "Cầu dài"}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
 
             isShortTermBan1 = value;
@@ -938,7 +937,7 @@ async function getTyLeCuocFromServer() {
                 'font-weight:normal; font-size:20px;color:blue; background-color:#FFE5B4');
 
             if (!isTest) {
-                await notifyTelegram(`Thay đổi công thức cược bàn 2: ${isShortTermBan2 ? "Cầu ngắn" : "Cầu dài"} => ${value ? "Cầu ngắn" : "Cầu dài"}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Thay đổi công thức cược bàn 2: ${isShortTermBan2 ? "Cầu ngắn" : "Cầu dài"} => ${value ? "Cầu ngắn" : "Cầu dài"}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
 
             isShortTermBan2 = value;
@@ -1008,7 +1007,7 @@ async function intervalFullFunc() {
             currentTotalProfit = currentProfitVirtualBan1 + currentProfitVirtualBan2;
             console.log(`%c${(currentProfitVirtualBan1 + currentProfitVirtualBan2).toLocaleString()} at ${new Date().toLocaleTimeString("vi-VN")}`,
                 'font-weight:normal; font-size:30px;color:white; background-color:#F95700');
-            await sendMsg(CODE_ROUND + "profit", currentProfitVirtualBan1 + currentProfitVirtualBan2);
+            const sendMsgTag = await sendMsg(CODE_ROUND + "profit", currentProfitVirtualBan1 + currentProfitVirtualBan2);
         }
         return;
     }
@@ -1019,7 +1018,7 @@ async function intervalFullFunc() {
     //         currentTotalProfit = currentProfitVirtualBan1 + currentProfitVirtualBan2;
     //         console.log(`%c${(currentProfitVirtualBan1 + currentProfitVirtualBan2).toLocaleString()} at ${new Date().toLocaleTimeString("vi-VN")}`,
     //             'font-weight:normal; font-size:30px;color:white; background-color:#F95700');
-    //         await sendMsg(CODE_ROUND + "profit", currentProfitVirtualBan1 + currentProfitVirtualBan2);
+    //         const sendMsgTag = await sendMsg(CODE_ROUND + "profit", currentProfitVirtualBan1 + currentProfitVirtualBan2);
     //     }
     //     return;
     // }
@@ -1040,7 +1039,7 @@ async function intervalFullFunc() {
         currentTotalProfit = parseFloat(currentMoney) - startCapital;
         // if (currentTotalProfit !== (currentProfitVirtualBan1 + currentProfitVirtualBan2)) {
         //     currentTotalProfit = currentProfitVirtualBan1 + currentProfitVirtualBan2;
-        await sendMsg(CODE_ROUND + "profit", currentTotalProfit);
+        const sendMsgTag = await sendMsg(CODE_ROUND + "profit", currentTotalProfit);
 
         console.log(`%c${(currentTotalProfit).toLocaleString()} at ${new Date().toLocaleTimeString("vi-VN")}`,
             'font-weight:normal; font-size:30px;color:#00539C; background-color:#FF8F55');
@@ -1049,9 +1048,9 @@ async function intervalFullFunc() {
         const floor = currentTotalProfit > 0 ? Math.floor(currentTotalProfit / 1_000_000) * 1_000_000 : Math.ceil(currentTotalProfit / 1_000_000) * 1_000_000;
         if (Math.abs(floor - beforeCurrentTotalProfit) >= 2_000_000) {
             if (floor < beforeCurrentTotalProfit) {
-                await notifyTelegram(`Profit giảm qua mốc: ${floor.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Profit giảm qua mốc: ${floor.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             } else if (floor > beforeCurrentTotalProfit) {
-                await notifyTelegram(`Profit tăng qua mốc: ${floor.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Profit tăng qua mốc: ${floor.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
             beforeCurrentTotalProfit = floor;
         }
@@ -1066,11 +1065,11 @@ async function intervalFullFunc() {
             startCapital = parseFloat(currentMoney);
 
             if (!isTest) {
-                await notifyTelegram(`Chốt lời: ${currentTotalProfit.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Chốt lời: ${currentTotalProfit.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
 
 
-            await sleep(5000);
+            const sleepTag = await sleep(5000);
 
             this.document.location = "http://google.com/"
         }
@@ -1083,11 +1082,11 @@ async function intervalFullFunc() {
             startCapital = parseFloat(currentMoney);
 
             if (!isTest) {
-                await notifyTelegram(`Cắt lỗ: ${currentTotalProfit.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Cắt lỗ: ${currentTotalProfit.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
 
 
-            await sleep(5000);
+            const sleepTag = await sleep(5000);
 
             this.document.location = "http://google.com/"
         }
@@ -1104,10 +1103,10 @@ async function intervalFullFunc() {
         startCapital = parseFloat(currentMoney);
 
         if (!isTest) {
-            await notifyTelegram(`Đã tới giới hạn lượt bet. Chốt profit: ${currentTotalProfit.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+            const noti = await notifyTelegram(`Đã tới giới hạn lượt bet. Chốt profit: ${currentTotalProfit.toLocaleString()}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
         }
 
-        await sleep(5000);
+        const sleepTag = await sleep(5000);
 
         this.document.location = "http://google.com/"
     }
@@ -1121,7 +1120,7 @@ async function intervalBan1Func() {
     if (txtStatus) {
         switch (txtStatus.innerText) {
             case "Bắt đầu đặt cược":
-                await betBan1();
+                const result = await betBan1();
                 break;
             case "Chờ bắt đầu ván mới":
                 if (roundBan1 < 1) {
@@ -1169,10 +1168,10 @@ async function intervalBan1Func() {
                 if (checkFirstRound === 2) {
                     console.log("Skip. Cây đầu bàn 1: " + new Date().toLocaleString("vi-VN"));
                     if (!isTest) {
-                        await notifyTelegram(`Bắt đầu xiên bài mới Bàn 1. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`)
+                        const noti = await notifyTelegram(`Bắt đầu xiên bài mới Bàn 1. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`)
                     }
 
-                    // await sendMsg(CODE_ROUND + "betBan1", 0);
+                    // const sendMsgTag = await sendMsg(CODE_ROUND + "betBan1", 0);
                     return;
                 }
 
@@ -1191,8 +1190,8 @@ async function intervalBan1Func() {
                     // currentMoneyVirtualBan1 = parseFloat(currentMoney);
 
                     // isStartBan1 = true;
-                    // await notifyTelegram(`Bắt đầu xiên bài mới Bàn 1. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`)
-                    // await sendMsg(CODE_ROUND + "betBan1", 2);
+                    // const noti = await notifyTelegram(`Bắt đầu xiên bài mới Bàn 1. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`)
+                    // const sendMsgTag = await sendMsg(CODE_ROUND + "betBan1", 2);
                 }
 
                 // if (!isStartBan1 && isReadyBan1 && roundBan1 >= 30 && roundBan1 <= 80) {
@@ -1205,7 +1204,7 @@ async function intervalBan1Func() {
                 //     }
                 // }
 
-                // await sendMsg(CODE_ROUND + "cauBan1", parseInt(numberChanBan1.toString()));
+                // const sendMsgTag = await sendMsg(CODE_ROUND + "cauBan1", parseInt(numberChanBan1.toString()));
 
 
                 if (newValue === 1) {
@@ -1216,7 +1215,7 @@ async function intervalBan1Func() {
                     } else {
                         if (chuoiCauBan1 > 1) {
                             lastChuoiCauBan1 = chuoiCauBan1;
-                            // await sendMsg(CODE_ROUND + "cauBan1", lastChuoiCauBan1);
+                            // const sendMsgTag = await sendMsg(CODE_ROUND + "cauBan1", lastChuoiCauBan1);
                         } else if (chuoiCauBan1 === 1) {
                             chuoiWinBan1++;
                         }
@@ -1231,7 +1230,7 @@ async function intervalBan1Func() {
                     } else {
                         if (chuoiCauBan1 > 1) {
                             lastChuoiCauBan1 = chuoiCauBan1;
-                            // await sendMsg(CODE_ROUND + "cauBan1", lastChuoiCauBan1);
+                            // const sendMsgTag = await sendMsg(CODE_ROUND + "cauBan1", lastChuoiCauBan1);
                         } else if (chuoiCauBan1 === 1) {
                             chuoiWinBan1++;
                         }
@@ -1243,7 +1242,7 @@ async function intervalBan1Func() {
                 console.log("Tính toán bắt đầu ván mới Bàn 1 - round " + roundBan1 + ": " + new Date().toLocaleString("vi-VN"));
 
 
-                await checkProfitVirtualBan1(newValue);
+                const resultBan1 = await checkProfitVirtualBan1(newValue);
                 // if (betVirtualBan1) {
                 //    await checkProfitVirtualBan1(newValue);
                 // } else {
@@ -1257,7 +1256,7 @@ async function intervalBan1Func() {
         }
     } else {
         console.log("Error");
-        return;
+
     }
 }
 
@@ -1269,7 +1268,7 @@ async function intervalBan2Func() {
     if (txtStatus) {
         switch (txtStatus.innerText) {
             case "Bắt đầu đặt cược":
-                await betBan2();
+                const result = await betBan2();
                 break;
             case "Chờ bắt đầu ván mới":
                 if (roundBan2 < 1) {
@@ -1317,10 +1316,10 @@ async function intervalBan2Func() {
                 if (checkFirstRound === 2) {
                     console.log("Skip. Cây đầu bàn 2: " + new Date().toLocaleString("vi-VN"));
                     if (!isTest) {
-                        await notifyTelegram(`Bắt đầu xiên bài mới Bàn 2. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`)
+                        const noti = await notifyTelegram(`Bắt đầu xiên bài mới Bàn 2. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`)
                     }
 
-                    // await sendMsg(CODE_ROUND + "betBan2", 5);
+                    // const sendMsgTag = await sendMsg(CODE_ROUND + "betBan2", 5);
                     return;
                 }
 
@@ -1339,8 +1338,8 @@ async function intervalBan2Func() {
                     // currentMoneyVirtualBan2 = parseFloat(currentMoney);
 
                     // isStartBan2 = false;
-                    // await notifyTelegram(`Bắt đầu xiên bài mới Bàn 2. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`)
-                    // await sendMsg(CODE_ROUND + "betBan2", 2);
+                    // const noti = await notifyTelegram(`Bắt đầu xiên bài mới Bàn 2. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`)
+                    // const sendMsgTag = await sendMsg(CODE_ROUND + "betBan2", 2);
                 }
 
                 // if (!isStartBan2 && isReadyBan2 && roundBan2 >= 30 && roundBan2 <= 80) {
@@ -1353,7 +1352,7 @@ async function intervalBan2Func() {
                 //     }
                 // }
 
-                // await sendMsg(CODE_ROUND + "cauBan2", parseInt(numberChanBan2.toString()));
+                // const sendMsgTag = await sendMsg(CODE_ROUND + "cauBan2", parseInt(numberChanBan2.toString()));
 
                 if (newValue === 1) {
                     if (lastValueBan2 === 1) {
@@ -1363,7 +1362,7 @@ async function intervalBan2Func() {
                     } else {
                         if (chuoiCauBan2 > 1) {
                             lastChuoiCauBan2 = chuoiCauBan2;
-                            // await sendMsg(CODE_ROUND + "cauBan2", lastChuoiCauBan2);
+                            // const sendMsgTag = await sendMsg(CODE_ROUND + "cauBan2", lastChuoiCauBan2);
                         } else if (chuoiCauBan2 === 1) {
                             chuoiWinBan2++;
                         }
@@ -1378,7 +1377,7 @@ async function intervalBan2Func() {
                     } else {
                         if (chuoiCauBan2 > 1) {
                             lastChuoiCauBan2 = chuoiCauBan2;
-                            // await sendMsg(CODE_ROUND + "cauBan2", lastChuoiCauBan2);
+                            // const sendMsgTag = await sendMsg(CODE_ROUND + "cauBan2", lastChuoiCauBan2);
                         } else if (chuoiCauBan2 === 1) {
                             chuoiWinBan2++;
                         }
@@ -1389,7 +1388,7 @@ async function intervalBan2Func() {
 
                 console.log("Tính toán bắt đầu ván mới Bàn 2 - round " + roundBan2 + ": " + new Date().toLocaleString("vi-VN"));
 
-                await checkProfitVirtualBan2(newValue);
+                const resultBan2 = await checkProfitVirtualBan2(newValue);
                 // if (betVirtualBan2) {
                 //     await checkProfitVirtualBan2(newValue);
                 // } else {
@@ -1403,7 +1402,7 @@ async function intervalBan2Func() {
         }
     } else {
         console.log("Error");
-        return;
+
     }
 }
 
@@ -1428,20 +1427,20 @@ async function main() {
     console.log("isTest: " + isTest);
     console.log("isReadyBan1: " + isReadyBan1);
     console.log("isReadyBan2: " + isReadyBan2);
-    await sendMsg(CODE_ROUND + "Ban1", 0);
-    await sendMsg(CODE_ROUND + "Ban2", 0);
-    await sendMsg(CODE_ROUND + "profit", 0);
-    await sendMsg(CODE_ROUND + "betBan1", tyLeCuocBan1FromServer);
-    await sendMsg(CODE_ROUND + "betBan2", tyLeCuocBan2FromServer);
-    await sendMsg(CODE_ROUND + "termBan1", isShortTermBan1 ? 1 : 2);
-    await sendMsg(CODE_ROUND + "termBan2", isShortTermBan2 ? 1 : 2);
+    const sendMsgTag1 = await sendMsg(CODE_ROUND + "Ban1", 0);
+    const sendMsgTag2 = await sendMsg(CODE_ROUND + "Ban2", 0);
+    const sendMsgTag3 = await sendMsg(CODE_ROUND + "profit", 0);
+    const sendMsgTag4 = await sendMsg(CODE_ROUND + "betBan1", tyLeCuocBan1FromServer);
+    const sendMsgTag5 = await sendMsg(CODE_ROUND + "betBan2", tyLeCuocBan2FromServer);
+    const sendMsgTag6 = await sendMsg(CODE_ROUND + "termBan1", isShortTermBan1 ? 1 : 2);
+    const sendMsgTag7 = await sendMsg(CODE_ROUND + "termBan2", isShortTermBan2 ? 1 : 2);
 
     if (!isTest) {
-        await notifyTelegram(`Bắt đầu phệt. Theo dõi tại đây: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
-        await notifyTelegram(`Ngưỡng chốt lời tổng: ${takeProfitReal.toLocaleString()}`);
-        await notifyTelegram(`Ngưỡng cắt lỗ tổng: ${stopLossReal.toLocaleString()}`);
-        await notifyTelegram(`Ngưỡng chốt lời bàn 1: ${threadHoldStopBan1.toLocaleString()}`);
-        await notifyTelegram(`Ngưỡng chốt lời bàn 2: ${threadHoldStopBan2.toLocaleString()}`);
+        const noti1 = await notifyTelegram(`Bắt đầu phệt. Theo dõi tại đây: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+        const noti2 = await notifyTelegram(`Ngưỡng chốt lời tổng: ${takeProfitReal.toLocaleString()}`);
+        const noti3 = await notifyTelegram(`Ngưỡng cắt lỗ tổng: ${stopLossReal.toLocaleString()}`);
+        const noti4 = await notifyTelegram(`Ngưỡng chốt lời bàn 1: ${threadHoldStopBan1.toLocaleString()}`);
+        const noti5 = await notifyTelegram(`Ngưỡng chốt lời bàn 2: ${threadHoldStopBan2.toLocaleString()}`);
     } else {
         console.log(`Bắt đầu phệt. Theo dõi tại đây: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
     }
@@ -1454,11 +1453,11 @@ async function main() {
 
         intervalTyLeCuoc.subscribe({
             next: async (data) => {
-                await getTyLeCuocFromServer();
+                const tag = await getTyLeCuocFromServer();
             },
         });
 
-        await sleep(500);
+        const sleepTag2 = await sleep(500);
 
         const intervalFull = new Observable(({next}) => {
             setInterval(() => next("Hello full"), 7 * 1000);
@@ -1466,11 +1465,11 @@ async function main() {
 
         intervalFull.subscribe({
             next: async (data) => {
-                await intervalFullFunc();
+                const tag = await intervalFullFunc();
             },
         });
 
-        await sleep(500);
+        const sleepTag3 = await sleep(500);
 
         const intervalBan1 = new Observable(({next}) => {
             setInterval(() => next("Hello bàn 1"), 7 * 1000);
@@ -1479,11 +1478,11 @@ async function main() {
         // Subscribe to that Observable;
         intervalBan1.subscribe({
             next: async (data) => {
-                await intervalBan1Func();
+                const tag = await intervalBan1Func();
             },
         });
 
-        await sleep(500);
+        const sleepTag4 = await sleep(500);
 
         const intervalBan2 = new Observable(({next}) => {
             setInterval(() => next("Hello bàn 2"), 7 * 1000);
@@ -1492,7 +1491,7 @@ async function main() {
         // Subscribe to that Observable;
         intervalBan2.subscribe({
             next: async (data) => {
-                await intervalBan2Func();
+                const tag = await intervalBan2Func();
             },
         });
     } catch (error) {
