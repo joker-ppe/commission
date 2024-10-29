@@ -1500,4 +1500,5 @@ async function main() {
 }
 
 
-await main();
+const resultMain =await main();
+console.log(resultMain);
