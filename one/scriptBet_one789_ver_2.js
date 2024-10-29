@@ -1500,5 +1500,5 @@ async function main() {
 }
 
 
-const resultMain =await main();
-console.log(resultMain);
+main().then(r => console.log(r));
+
