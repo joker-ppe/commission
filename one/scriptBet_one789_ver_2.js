@@ -1,9 +1,3 @@
-const script = document.createElement('script');
-script.src = 'https://html2canvas.hertzen.com/dist/html2canvas.min.js';
-document.head.appendChild(script);
-
-let imageTX = '';
-let imageCL = '';
 
 // 10.000.000
 let currentMoney = 0;
@@ -124,7 +118,7 @@ let stopLossReal = -20_000_000; // ngưỡng dừng khi tới điểm lỗ
 let threadHoldStopBan1 = 3_000_000; // ngưỡng dừng bàn 1 2_200_000 - 2_950_000
 let threadHoldStopBan2 = 3_000_000; // ngường dừng bàn 2
 
-let threadHold = 111_500_000;
+let threadHold = 3_000_000;
 let threadHoldTop = 200_500_000;
 let threadHoldUpdateBan1 = 0;
 let threadHoldUpdateBan2 = 0;
@@ -485,7 +479,8 @@ async function checkProfitVirtualBan1(newValue) {
 
         await notifyTelegram(`Bàn 1 đã đạt ngưỡng dương: ${threadHoldStopBan1.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
         await sendMsg(CODE_ROUND + "betBan1", 0);
-        threadHoldStopBan1 += 4_000_000;
+        threadHoldStopBan1 += threadHold;
+        await notifyTelegram(`Ngưỡng chốt lời mới bàn 1 tăng thành: ${threadHoldStopBan1.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
     }
 
     if (currentProfitVirtualBan1 <= ((-2) * threadHoldStopBan1)) {
@@ -663,7 +658,8 @@ async function checkProfitVirtualBan2(newValue) {
 
         await sendMsg(CODE_ROUND + "betBan2", 0);
         //
-        threadHoldStopBan2 += 4_000_000;
+        threadHoldStopBan2 += threadHold;
+        await notifyTelegram(`Ngưỡng chốt lời mới bàn 2 tăng thành: ${threadHoldStopBan2.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
     }
 
     if (currentProfitVirtualBan2 <= ((-2) * threadHoldStopBan2)) {
@@ -1505,8 +1501,4 @@ async function main() {
 }
 
 
-// Đợi thư viện được tải xong
-script.onload = async () => {
-
-    await main();
-};
+await main();
