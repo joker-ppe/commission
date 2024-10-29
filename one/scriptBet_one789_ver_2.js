@@ -113,7 +113,7 @@ const isTest = false;
 
 
 let takeProfitReal = 4_000_000; // ngưỡng dừng khi đạt đủ lời
-let stopLossReal = -20_000_000; // ngưỡng dừng khi tới điểm lỗ
+let stopLossReal = -25_000_000; // ngưỡng dừng khi tới điểm lỗ
 
 let threadHoldStopBan1 = 3_000_000; // ngưỡng dừng bàn 1 2_200_000 - 2_950_000
 let threadHoldStopBan2 = 3_000_000; // ngường dừng bàn 2
