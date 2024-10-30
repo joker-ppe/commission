@@ -178,11 +178,10 @@ async function cuocBan1() {
             tyLeCuocBan1 = 1;
         } else if (chuoiCauBan1 === 2) {
             tyLeCuocBan1 = isShortTermBan1 === 2 ? 2 : 1;
-        }
-        // else if (chuoiCauBan1 === 3) {
-        //     tyLeCuocBan1 = isShortTermBan1 ? 0 : 1;
-        // }
-        else if (chuoiCauBan1 >= 3) {
+        } else if (chuoiCauBan1 === 3 || chuoiCauBan1 === 4) {
+            reverseBetBan1 = true;
+            tyLeCuocBan1 = isShortTermBan1 === 2 ? 0 : 1;
+        } else if (chuoiCauBan1 > 4) {
             reverseBetBan1 = true;
             tyLeCuocBan1 = 1;
         }
@@ -302,11 +301,10 @@ async function cuocBan2() {
             tyLeCuocBan2 = 1;
         } else if (chuoiCauBan2 === 2) {
             tyLeCuocBan2 = isShortTermBan2 === 2 ? 2 : 1;
-        }
-        // else if (chuoiCauBan2 === 3) {
-        //     tyLeCuocBan2 = isShortTermBan2 ? 0 : 1;
-        // }
-        else if (chuoiCauBan2 >= 3) {
+        } else if (chuoiCauBan2 === 3 || chuoiCauBan2 === 4) {
+            reverseBetBan2 = true;
+            tyLeCuocBan2 = isShortTermBan2 === 2 ? 0 : 1;
+        } else if (chuoiCauBan2 > 4) {
             reverseBetBan2 = true;
             tyLeCuocBan2 = 1;
         }
