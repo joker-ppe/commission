@@ -457,22 +457,22 @@ async function checkProfitVirtualBan1(newValue) {
         tyLeNhanBan1Random = 1;
     }
 
-    if (threadHoldUpdateBan1 === 0) {
-        threadHoldUpdateBan1 = currentProfitVirtualBan1 - (threadHold);
-    }
-
-    if (currentProfitVirtualBan1 - threadHoldUpdateBan1 > (threadHold)) {
-        threadHoldUpdateBan1 = currentProfitVirtualBan1 - (threadHold);
-    }
-
-    if (currentProfitVirtualBan1 < threadHoldUpdateBan1 && currentProfitVirtualBan1 !== 0 && tyLeCuocBan1FromServer !== 0) {
-        console.log("Bàn 1 âm 2tr: " + currentProfitVirtualBan1.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
-        threadHoldUpdateBan1 -= (threadHold * tyLeCuocBan1FromServer);
-
-        if (chuoiCauBan1 !== -2) {
-            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
-        }
-    }
+    // if (threadHoldUpdateBan1 === 0) {
+    //     threadHoldUpdateBan1 = currentProfitVirtualBan1 - (threadHold);
+    // }
+    //
+    // if (currentProfitVirtualBan1 - threadHoldUpdateBan1 > (threadHold)) {
+    //     threadHoldUpdateBan1 = currentProfitVirtualBan1 - (threadHold);
+    // }
+    //
+    // if (currentProfitVirtualBan1 < threadHoldUpdateBan1 && currentProfitVirtualBan1 !== 0 && tyLeCuocBan1FromServer !== 0) {
+    //     console.log("Bàn 1 âm 2tr: " + currentProfitVirtualBan1.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
+    //     threadHoldUpdateBan1 -= (threadHold * tyLeCuocBan1FromServer);
+    //
+    //     if (chuoiCauBan1 !== -2) {
+    //         const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
+    //     }
+    // }
 
     if (currentProfitVirtualBan1 >= threadHoldStopBan1) {
 
@@ -635,22 +635,22 @@ async function checkProfitVirtualBan2(newValue) {
         tyLeNhanBan2Random = 1;
     }
 
-    if (threadHoldUpdateBan2 === 0) {
-        threadHoldUpdateBan2 = currentProfitVirtualBan2 - (threadHold * tyLeCuocBan2FromServer);
-    }
-
-    if (currentProfitVirtualBan2 - threadHoldUpdateBan2 > (threadHold * tyLeCuocBan2FromServer)) {
-        threadHoldUpdateBan2 = currentProfitVirtualBan2 - (threadHold * tyLeCuocBan2FromServer);
-    }
-
-    if (currentProfitVirtualBan2 < threadHoldUpdateBan2 && currentProfitVirtualBan2 !== 0 && tyLeCuocBan2FromServer !== 0) {
-        console.log("Bàn 2 âm 2tr: " + currentProfitVirtualBan2.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
-        threadHoldUpdateBan2 -= (threadHold * tyLeCuocBan2FromServer);
-
-        if (chuoiCauBan2 !== -2) {
-            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
-        }
-    }
+    // if (threadHoldUpdateBan2 === 0) {
+    //     threadHoldUpdateBan2 = currentProfitVirtualBan2 - (threadHold * tyLeCuocBan2FromServer);
+    // }
+    //
+    // if (currentProfitVirtualBan2 - threadHoldUpdateBan2 > (threadHold * tyLeCuocBan2FromServer)) {
+    //     threadHoldUpdateBan2 = currentProfitVirtualBan2 - (threadHold * tyLeCuocBan2FromServer);
+    // }
+    //
+    // if (currentProfitVirtualBan2 < threadHoldUpdateBan2 && currentProfitVirtualBan2 !== 0 && tyLeCuocBan2FromServer !== 0) {
+    //     console.log("Bàn 2 âm 2tr: " + currentProfitVirtualBan2.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
+    //     threadHoldUpdateBan2 -= (threadHold * tyLeCuocBan2FromServer);
+    //
+    //     if (chuoiCauBan2 !== -2) {
+    //         const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
+    //     }
+    // }
 
     if (currentProfitVirtualBan2 >= threadHoldStopBan2) {
         const noti1 = await notifyTelegram(`Bàn 2 đã đạt ngưỡng dương: ${threadHoldStopBan2.toLocaleString()}. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
