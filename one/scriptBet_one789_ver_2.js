@@ -110,14 +110,13 @@ let tyLeCuocBan2FromServer = 0;
 
 const isTest = false;
 
-
-let takeProfitReal = 4_000_000; // ngưỡng dừng khi đạt đủ lời
+let takeProfitReal = 2_000_000; // ngưỡng dừng khi đạt đủ lời
 let stopLossReal = -25_000_000; // ngưỡng dừng khi tới điểm lỗ
 
-let threadHoldStopBan1 = 3_000_000; // ngưỡng dừng bàn 1 2_200_000 - 2_950_000
-let threadHoldStopBan2 = 3_000_000; // ngường dừng bàn 2
+let threadHoldStopBan1 = 2_000_000; // ngưỡng dừng bàn 1 2_200_000 - 2_950_000
+let threadHoldStopBan2 = 2_000_000; // ngường dừng bàn 2
 
-let threadHold = 3_000_000;
+let threadHold = 2_000_000;
 let threadHoldTop = 200_500_000;
 let threadHoldUpdateBan1 = 0;
 let threadHoldUpdateBan2 = 0;
