@@ -105,24 +105,32 @@ let tyLeNhanBan2Random = 1;
 let isShortTermBan1 = 1; // 1 là ngắn thường, 2 là ngắn thếp, 3 là dài
 let isShortTermBan2 = 1;
 
-let tyLeCuocBan1FromServer = 0;
-let tyLeCuocBan2FromServer = 0;
+let tyLeCuocBan1FromServer = 1;
+let tyLeCuocBan2FromServer = 1;
 
-const isTest = false;
+const isTest = true;
 
-let takeProfitReal = 3_000_000; // ngưỡng dừng khi đạt đủ lời
-let stopLossReal = -9_000_000; // ngưỡng dừng khi tới điểm lỗ
+let takeProfitReal = 2000_000_000; // ngưỡng dừng khi đạt đủ lời
+let stopLossReal = -2500_000_000; // ngưỡng dừng khi tới điểm lỗ
 
-let threadHoldStopBan1 = 3_000_000; // ngưỡng dừng bàn 1 2_200_000 - 2_950_000
-let threadHoldStopBan2 = 3_000_000; // ngường dừng bàn 2
+let threadHoldStopBan1 = 2000_000_000; // ngưỡng dừng bàn 1 2_200_000 - 2_950_000
+let threadHoldStopBan2 = 2000_000_000; // ngường dừng bàn 2
 
-let threadHold = 2_000_000;
+let threadHold = 1_000_000;
 let threadHoldTop = 200_500_000;
 let threadHoldUpdateBan1 = 0;
 let threadHoldUpdateBan2 = 0;
 
+let roundChuoiNganBan1 = 0;
+let roundChuoiNganBan2 = 0;
+
+let threadHoldRoundBan1 = 1;
+let threadHoldRoundBan2 = 1;
 
 const tyLeTraThuong = 1.96;
+
+let profitBan1Action = 0;
+let profitBan2Action = 0;
 
 function sleep(ms) {
     return new Promise((resolveFunc) => setTimeout(resolveFunc, ms));
@@ -178,16 +186,17 @@ async function cuocBan1() {
         if (chuoiCauBan1 === 1) {
             tyLeCuocBan1 = 1;
         } else if (chuoiCauBan1 === 2) {
-            tyLeCuocBan1 = isShortTermBan1 === 2 ? 2 : 1;
-        } else if (chuoiCauBan1 === 3 || chuoiCauBan1 === 4) {
-            reverseBetBan1 = true;
-            tyLeCuocBan1 = isShortTermBan1 === 2 ? 0 : 1;
-        } else if (chuoiCauBan1 > 4) {
+            tyLeCuocBan1 = 2;
+        }
+        else if (chuoiCauBan1 === 3) {
+            tyLeCuocBan1 = 1;
+        }
+        // else if (chuoiCauBan1 === 4) {
+        //     tyLeCuocBan1 = 8;
+        // }
+        else if (chuoiCauBan1 > 3) {
             reverseBetBan1 = true;
             tyLeCuocBan1 = 1;
-            if (tyLeCuocBan1FromServer === 0 && chuoiCauBan1 === 5) {
-                const noti1 = await notifyTelegram(`Bàn 1 xuất hiện cầu dài. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
-            }
         }
 
         tyLeCuocBan1 = tyLeCuocBan1 * tyLeCuocBan1FromServer;
@@ -202,6 +211,7 @@ async function cuocBan1() {
         // cược ảo
         betBan1Virtual = tyLeCuocBan1 * tyLeCuocBth;
         currentMoneyVirtualBan1 -= betBan1Virtual;
+        profitBan1Action -= betBan1Virtual;
 
         if (isReadyBan1) {
             currentMoneyRealBan1 -= betBan1Virtual;
@@ -304,16 +314,16 @@ async function cuocBan2() {
         if (chuoiCauBan2 === 1) {
             tyLeCuocBan2 = 1;
         } else if (chuoiCauBan2 === 2) {
-            tyLeCuocBan2 = isShortTermBan2 === 2 ? 2 : 1;
-        } else if (chuoiCauBan2 === 3 || chuoiCauBan2 === 4) {
+            tyLeCuocBan2 = 2;
+        } else if (chuoiCauBan2 === 3) {
+            tyLeCuocBan2 = 4;
+        }
+        // else if (chuoiCauBan2 === 4) {
+        //     tyLeCuocBan2 = 8;
+        // }
+        else if (chuoiCauBan2 > 3) {
             reverseBetBan2 = true;
-            tyLeCuocBan2 = isShortTermBan2 === 2 ? 0 : 1;
-        } else if (chuoiCauBan2 > 4) {
-            reverseBetBan2 = true;
-            tyLeCuocBan2 = 1;
-            if (tyLeCuocBan2FromServer === 0 && chuoiCauBan2 === 5) {
-                const noti1 = await notifyTelegram(`Bàn 2 xuất hiện cầu dài. Vui lòng kiểm tra tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
-            }
+            tyLeCuocBan2 = 3;
         }
 
         tyLeCuocBan2 = tyLeCuocBan2 * tyLeCuocBan2FromServer;
@@ -328,6 +338,7 @@ async function cuocBan2() {
         // cược ảo
         betBan2Virtual = tyLeCuocBan2 * tyLeCuocBth;
         currentMoneyVirtualBan2 -= betBan2Virtual;
+        profitBan2Action -= betBan2Virtual;
 
         if (isReadyBan2) {
             currentMoneyRealBan2 -= betBan2Virtual;
@@ -451,6 +462,7 @@ async function checkProfitVirtualBan1(newValue) {
             const type = betValueBan1 === 1 ? "Chẵn" : "Lẻ";
             console.log("%cWin Virtual Bàn 1 " + type + ": " + (betBan1Virtual * tyLeTraThuong).toLocaleString(), 'color: green');
             currentMoneyVirtualBan1 += (betBan1Virtual * tyLeTraThuong);
+            profitBan1Action += (betBan1Virtual * tyLeTraThuong);
 
             if (isReadyBan1) {
                 currentMoneyRealBan1 += (betBan1Virtual * tyLeTraThuong);
@@ -488,10 +500,28 @@ async function checkProfitVirtualBan1(newValue) {
     //     console.log("Bàn 1 âm 2tr: " + currentProfitVirtualBan1.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
     //     threadHoldUpdateBan1 -= (threadHold * tyLeCuocBan1FromServer);
     //
-    //     if (chuoiCauBan1 !== -2) {
-    //         const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
-    //     }
+    //     const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", isShortTermBan1 === 1 ? 3 : 1);
     // }
+
+    if (Math.abs(profitBan1Action) >= threadHold) {
+        const sendMsgTag = await sendMsg(CODE_ROUND + "betBan1", 0);
+        profitBan1Action = 0;
+    }
+
+    if (chuoiCauBan1 > 3) {
+        roundChuoiNganBan1 = 0;
+        if (isShortTermBan1 === 1) {
+            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", 3);
+        }
+        const sendMsgTag4 = await sendMsg(CODE_ROUND + "betBan1", 1);
+    } else if (chuoiCauBan1 === 1) {
+        roundChuoiNganBan1++;
+        if (roundChuoiNganBan1 > threadHoldRoundBan1 && isShortTermBan1 === 3) {
+            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", 1);
+        }
+    }
+
+
 
     if (currentProfitVirtualBan1 >= threadHoldStopBan1) {
 
@@ -596,9 +626,12 @@ async function checkProfitVirtualBan1(newValue) {
         console.table({
             "Bàn virtual": 1 + " - " + getStringTerm(isShortTermBan1),
             "----": `[${tyLeNhanBan1}]---------${lastChuoiCauBan1}------${chuoiCauBan1}----`,
+            "Round short": roundChuoiNganBan1,
+            "Thread hold Round": threadHoldRoundBan1,
+            "Profit action": profitBan1Action.toLocaleString(),
             "Current profit": currentProfitVirtualBan1.toLocaleString(),
-            "Thread hold": threadHoldUpdateBan1.toLocaleString(),
-            "Thread hold top": (threadHoldTop + minProfitVirtualBan1).toLocaleString(),
+            // "Thread hold": threadHoldUpdateBan1.toLocaleString(),
+            // "Thread hold top": (threadHoldTop + minProfitVirtualBan1).toLocaleString(),
             // "Current tmp profit": currentProfitTmpVirtualBan1.toLocaleString(),
             // " ----- ": "--------------------",
             // "Max profit": maxProfitVirtualBan1.toLocaleString(),
@@ -630,6 +663,7 @@ async function checkProfitVirtualBan2(newValue) {
             const type = betValueBan2 === 1 ? "Chẵn" : "Lẻ";
             console.log("%cWin Virtual Bàn 2 " + type + ": " + (betBan2Virtual * tyLeTraThuong).toLocaleString(), 'color: blue');
             currentMoneyVirtualBan2 += (betBan2Virtual * tyLeTraThuong);
+            profitBan2Action += (betBan2Virtual * tyLeTraThuong);
 
             if (isReadyBan2) {
                 currentMoneyRealBan2 += (betBan2Virtual * tyLeTraThuong);
@@ -654,6 +688,26 @@ async function checkProfitVirtualBan2(newValue) {
         tyLeNhanBan2Random = 1;
     }
 
+    if (Math.abs(profitBan2Action) >= threadHold) {
+        const sendMsgTag = await sendMsg(CODE_ROUND + "betBan2", 0);
+        profitBan2Action = 0;
+    }
+
+    if (chuoiCauBan2 > 3) {
+        roundChuoiNganBan2 = 0;
+        if (isShortTermBan2 === 1) {
+            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", 3);
+        }
+        const sendMsgTag4 = await sendMsg(CODE_ROUND + "betBan2", 1);
+    } else if (chuoiCauBan2 === 1) {
+        roundChuoiNganBan2++;
+        if (roundChuoiNganBan2 > threadHoldRoundBan2 && isShortTermBan2 === 3) {
+            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", 1);
+        }
+    }
+
+
+
     // if (threadHoldUpdateBan2 === 0) {
     //     threadHoldUpdateBan2 = currentProfitVirtualBan2 - (threadHold * tyLeCuocBan2FromServer);
     // }
@@ -666,9 +720,7 @@ async function checkProfitVirtualBan2(newValue) {
     //     console.log("Bàn 2 âm 2tr: " + currentProfitVirtualBan2.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
     //     threadHoldUpdateBan2 -= (threadHold * tyLeCuocBan2FromServer);
     //
-    //     if (chuoiCauBan2 !== -2) {
-    //         const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
-    //     }
+    //     const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", isShortTermBan2 === 1 ? 3 : 1);
     // }
 
     if (currentProfitVirtualBan2 >= threadHoldStopBan2) {
@@ -775,9 +827,12 @@ async function checkProfitVirtualBan2(newValue) {
         console.table({
             "Bàn virtual": 2 + " - " + getStringTerm(isShortTermBan2),
             "----": `[${tyLeNhanBan2}]---------${lastChuoiCauBan2}------${chuoiCauBan2}----`,
+            "Round short": roundChuoiNganBan2,
+            "Thread hold Round": threadHoldRoundBan2,
+            "Profit action": profitBan2Action.toLocaleString(),
             "Current profit": currentProfitVirtualBan2.toLocaleString(),
-            "Thread hold": threadHoldUpdateBan2.toLocaleString(),
-            "Thread hold top": (threadHoldTop + minProfitVirtualBan2).toLocaleString(),
+            // "Thread hold": threadHoldUpdateBan2.toLocaleString(),
+            // "Thread hold top": (threadHoldTop + minProfitVirtualBan2).toLocaleString(),
             // "Before profit": beforeProfitVirtualBan2.toLocaleString(),
             // "Current tmp profit": currentProfitTmpVirtualBan2.toLocaleString(),
             // " ----- ": "--------------------",

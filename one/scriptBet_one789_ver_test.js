@@ -102,22 +102,21 @@ let tyLeNhanBan1Random = 1;
 let tyLeNhanBan2Random = 1;
 
 
-let isShortTermBan1 = true;
-let isShortTermBan2 = true;
+let isShortTermBan1 = 1; // 1 là ngắn thường, 2 là ngắn thếp, 3 là dài
+let isShortTermBan2 = 1;
 
-let tyLeCuocBan1FromServer = 0;
-let tyLeCuocBan2FromServer = 0;
+let tyLeCuocBan1FromServer = 1;
+let tyLeCuocBan2FromServer = 1;
 
 const isTest = true;
 
+let takeProfitReal = 2000_000_000; // ngưỡng dừng khi đạt đủ lời
+let stopLossReal = -2500_000_000; // ngưỡng dừng khi tới điểm lỗ
 
-let takeProfitReal = 4_000_000; // ngưỡng dừng khi đạt đủ lời
-let stopLossReal = -25_000_000; // ngưỡng dừng khi tới điểm lỗ
+let threadHoldStopBan1 = 2000_000_000; // ngưỡng dừng bàn 1 2_200_000 - 2_950_000
+let threadHoldStopBan2 = 2000_000_000; // ngường dừng bàn 2
 
-let threadHoldStopBan1 = 3_000_000; // ngưỡng dừng bàn 1 2_200_000 - 2_950_000
-let threadHoldStopBan2 = 3_000_000; // ngường dừng bàn 2
-
-let threadHold = 3_000_000;
+let threadHold = 600_000;
 let threadHoldTop = 200_500_000;
 let threadHoldUpdateBan1 = 0;
 let threadHoldUpdateBan2 = 0;
@@ -126,6 +125,17 @@ const tyLeTraThuong = 1.96;
 
 function sleep(ms) {
     return new Promise((resolveFunc) => setTimeout(resolveFunc, ms));
+}
+
+function getStringTerm(value) {
+    value = parseInt(value);
+    if (value === 1) {
+        return "Ngắn thường";
+    } else if (value === 2) {
+        return "Ngắn thếp";
+    } else if (value === 3) {
+        return "Dài";
+    }
 }
 
 // function getFibonacci(n) {
@@ -158,7 +168,7 @@ async function cuocBan1() {
     if (lastValueBan1 !== -1) {
         // mặc định
         let tyLeCuocBan1 = 0;
-        reverseBetBan1 = !isShortTermBan1;
+        reverseBetBan1 = isShortTermBan1 === 3;
 
         // if (chuoiCauBan1 === 1) {
         //     tyLeCuocBan1 = 1;
@@ -167,10 +177,11 @@ async function cuocBan1() {
         if (chuoiCauBan1 === 1) {
             tyLeCuocBan1 = 1;
         } else if (chuoiCauBan1 === 2) {
-            tyLeCuocBan1 = isShortTermBan1 ? 2 : 1;
-        } else if (chuoiCauBan1 === 3) {
-            tyLeCuocBan1 = 1;
-        } else if (chuoiCauBan1 > 3) {
+            tyLeCuocBan1 = isShortTermBan1 === 2 ? 2 : 1;
+        } else if (chuoiCauBan1 === 3 || chuoiCauBan1 === 4) {
+            reverseBetBan1 = true;
+            tyLeCuocBan1 = isShortTermBan1 === 2 ? 0 : 1;
+        } else if (chuoiCauBan1 > 4) {
             reverseBetBan1 = true;
             tyLeCuocBan1 = 1;
         }
@@ -279,7 +290,7 @@ async function cuocBan2() {
 
         // mặc định
         let tyLeCuocBan2 = 0;
-        reverseBetBan2 = !isShortTermBan2;
+        reverseBetBan2 = isShortTermBan2 === 3;
 
         // if (chuoiCauBan2 === 1) {
         //     tyLeCuocBan2 = 1;
@@ -289,10 +300,11 @@ async function cuocBan2() {
         if (chuoiCauBan2 === 1) {
             tyLeCuocBan2 = 1;
         } else if (chuoiCauBan2 === 2) {
-            tyLeCuocBan2 = isShortTermBan2 ? 2 : 1;
-        } else if (chuoiCauBan2 === 3) {
-            tyLeCuocBan2 = 1;
-        } else if (chuoiCauBan2 > 3) {
+            tyLeCuocBan2 = isShortTermBan2 === 2 ? 2 : 1;
+        } else if (chuoiCauBan2 === 3 || chuoiCauBan2 === 4) {
+            reverseBetBan2 = true;
+            tyLeCuocBan2 = isShortTermBan2 === 2 ? 0 : 1;
+        } else if (chuoiCauBan2 > 4) {
             reverseBetBan2 = true;
             tyLeCuocBan2 = 1;
         }
@@ -469,9 +481,7 @@ async function checkProfitVirtualBan1(newValue) {
         console.log("Bàn 1 âm 2tr: " + currentProfitVirtualBan1.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
         threadHoldUpdateBan1 -= (threadHold * tyLeCuocBan1FromServer);
 
-        if (chuoiCauBan1 !== -2) {
-            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
-        }
+        const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", isShortTermBan1 === 1 ? 3 : 1);
     }
 
     if (currentProfitVirtualBan1 >= threadHoldStopBan1) {
@@ -504,9 +514,9 @@ async function checkProfitVirtualBan1(newValue) {
         console.log("Bàn 1 đạt 3tr: " + currentProfitVirtualBan1.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
         minProfitVirtualBan1 = currentProfitVirtualBan1;
 
-        if (chuoiCauBan1 !== -2) {
-            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
-        }
+        // if (chuoiCauBan1 !== -2) {
+        //     const sendMsgTag = await sendMsg(CODE_ROUND + "termBan1", !isShortTermBan1 ? 1 : 2);
+        // }
     }
 
     // if (currentProfitVirtualBan1 - beforeProfitVirtualBan1 <= diffThreadHoldAbove) {
@@ -575,7 +585,7 @@ async function checkProfitVirtualBan1(newValue) {
         minProfitVirtualBan1 = 0;
     } else {
         console.table({
-            "Bàn virtual": 1 + (isShortTermBan1 ? " - Cầu ngắn" : " - Cầu dài"),
+            "Bàn virtual": 1 + " - " + getStringTerm(isShortTermBan1),
             "----": `[${tyLeNhanBan1}]---------${lastChuoiCauBan1}------${chuoiCauBan1}----`,
             "Current profit": currentProfitVirtualBan1.toLocaleString(),
             "Thread hold": threadHoldUpdateBan1.toLocaleString(),
@@ -647,9 +657,7 @@ async function checkProfitVirtualBan2(newValue) {
         console.log("Bàn 2 âm 2tr: " + currentProfitVirtualBan2.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
         threadHoldUpdateBan2 -= (threadHold * tyLeCuocBan2FromServer);
 
-        if (chuoiCauBan2 !== -2) {
-            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
-        }
+        const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", isShortTermBan2 === 1 ? 3 : 1);
     }
 
     if (currentProfitVirtualBan2 >= threadHoldStopBan2) {
@@ -683,9 +691,9 @@ async function checkProfitVirtualBan2(newValue) {
         console.log("Bàn 2 đạt 3tr: " + currentProfitVirtualBan2.toLocaleString() + " - " + new Date().toLocaleTimeString("vi-VN"));
         minProfitVirtualBan2 = currentProfitVirtualBan2;
 
-        if (chuoiCauBan2 !== -2) {
-            const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
-        }
+        // if (chuoiCauBan2 !== -2) {
+        //     const sendMsgTag = await sendMsg(CODE_ROUND + "termBan2", !isShortTermBan2 ? 1 : 2);
+        // }
     }
 
     // if (currentProfitVirtualBan2 - beforeProfitVirtualBan2 <= diffThreadHoldAbove) {
@@ -754,7 +762,7 @@ async function checkProfitVirtualBan2(newValue) {
         minProfitVirtualBan2 = 10_0000_000;
     } else {
         console.table({
-            "Bàn virtual": 2 + (isShortTermBan2 ? " - Cầu ngắn" : " - Cầu dài"),
+            "Bàn virtual": 2 + " - " + getStringTerm(isShortTermBan2),
             "----": `[${tyLeNhanBan2}]---------${lastChuoiCauBan2}------${chuoiCauBan2}----`,
             "Current profit": currentProfitVirtualBan2.toLocaleString(),
             "Thread hold": threadHoldUpdateBan2.toLocaleString(),
@@ -912,13 +920,13 @@ async function getTyLeCuocFromServer() {
     // console.log(ban1Data);
 
     if (ban1DataShortTerm) {
-        const value = parseInt(ban1DataShortTerm[ban1DataShortTerm.length - 1]) === 1;
+        const value = parseInt(ban1DataShortTerm[ban1DataShortTerm.length - 1]);
         if (isShortTermBan1 !== value) {
-            console.log(`%cBàn 1 update công thức: ${isShortTermBan1 ? "Cầu ngắn" : "Cầu dài"} => ${value ? "Cầu ngắn" : "Cầu dài"} at ${new Date().toLocaleTimeString("vi-VN")}`,
+            console.log(`%cBàn 1 update công thức: ${getStringTerm(isShortTermBan1)} => ${getStringTerm(value)} at ${new Date().toLocaleTimeString("vi-VN")}`,
                 'font-weight:normal; font-size:20px;color:green; background-color:#FFE5B4');
 
             if (!isTest) {
-                const noti = await notifyTelegram(`Thay đổi công thức cược bàn 1: ${isShortTermBan1 ? "Cầu ngắn" : "Cầu dài"} => ${value ? "Cầu ngắn" : "Cầu dài"}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Thay đổi công thức cược bàn 1: ${getStringTerm(isShortTermBan1)} => ${getStringTerm(value)}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
 
             isShortTermBan1 = value;
@@ -931,13 +939,13 @@ async function getTyLeCuocFromServer() {
     // console.log(ban1Data);
 
     if (ban2DataShortTerm) {
-        const value = parseInt(ban2DataShortTerm[ban2DataShortTerm.length - 1]) === 1;
+        const value = parseInt(ban2DataShortTerm[ban2DataShortTerm.length - 1]);
         if (isShortTermBan2 !== value) {
-            console.log(`%cBàn 2 update công thức: ${isShortTermBan2 ? "Cầu ngắn" : "Cầu dài"} => ${value ? "Cầu ngắn" : "Cầu dài"} at ${new Date().toLocaleTimeString("vi-VN")}`,
+            console.log(`%cBàn 2 update công thức: ${getStringTerm(isShortTermBan2)} => ${getStringTerm(value)} at ${new Date().toLocaleTimeString("vi-VN")}`,
                 'font-weight:normal; font-size:20px;color:blue; background-color:#FFE5B4');
 
             if (!isTest) {
-                const noti = await notifyTelegram(`Thay đổi công thức cược bàn 2: ${isShortTermBan2 ? "Cầu ngắn" : "Cầu dài"} => ${value ? "Cầu ngắn" : "Cầu dài"}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
+                const noti = await notifyTelegram(`Thay đổi công thức cược bàn 2: ${getStringTerm(isShortTermBan2)} => ${getStringTerm(value)}. Chi tiết xem tại: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
             }
 
             isShortTermBan2 = value;
@@ -1432,8 +1440,8 @@ async function main() {
     const sendMsgTag3 = await sendMsg(CODE_ROUND + "profit", 0);
     const sendMsgTag4 = await sendMsg(CODE_ROUND + "betBan1", tyLeCuocBan1FromServer);
     const sendMsgTag5 = await sendMsg(CODE_ROUND + "betBan2", tyLeCuocBan2FromServer);
-    const sendMsgTag6 = await sendMsg(CODE_ROUND + "termBan1", isShortTermBan1 ? 1 : 2);
-    const sendMsgTag7 = await sendMsg(CODE_ROUND + "termBan2", isShortTermBan2 ? 1 : 2);
+    const sendMsgTag6 = await sendMsg(CODE_ROUND + "termBan1", isShortTermBan1);
+    const sendMsgTag7 = await sendMsg(CODE_ROUND + "termBan2", isShortTermBan2);
 
     if (!isTest) {
         const noti1 = await notifyTelegram(`Bắt đầu phệt. Theo dõi tại đây: http://18.182.62.197:4000/one/?exchange=${CODE_ROUND}`);
